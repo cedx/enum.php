@@ -3,13 +3,13 @@
  * Implementation of the `cedx\test\EnumTraitTest` class.
  */
 namespace cedx\test;
-use cedx\{Enum};
+use cedx\{EnumTrait};
 
 /**
  * A sample enumeration.
  */
 final class SampleEnum {
-  use Enum;
+  use EnumTrait;
 
   /**
    * @var bool The first enumerated value.

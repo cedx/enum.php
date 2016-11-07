@@ -7,7 +7,7 @@ namespace cedx;
 /**
  * Provides static methods for enumerations.
  */
-trait Enum {
+trait EnumTrait {
 
   /**
    * Private constructor: prohibit the class instantiation.
