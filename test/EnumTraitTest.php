@@ -60,13 +60,6 @@ class EnumTraitTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * Tests the `Enum::getConstants()` method.
-   */
-  public function testGetConstants() {
-    $this->assertEquals(['ZERO' => false, 'ONE' => 1, 'TWO' => 'two', 'THREE' => 3.0], SampleEnum::getConstants());
-  }
-
-  /**
    * Tests the `Enum::getName()` method.
    */
   public function testGetName() {
