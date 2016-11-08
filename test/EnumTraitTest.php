@@ -38,7 +38,7 @@ final class SampleEnum {
 class EnumTraitTest extends \PHPUnit_Framework_TestCase {
 
   /**
-   * Tests the `Enum` constructor.
+   * Tests the `EnumTrait` constructor.
    */
   public function testConstructor() {
     $constructor = (new \ReflectionClass(SampleEnum::class))->getConstructor();
@@ -47,7 +47,7 @@ class EnumTraitTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * Tests the `Enum::isDefined()` method.
+   * Tests the `EnumTrait::isDefined()` method.
    */
   public function testIsDefined() {
     $this->assertFalse(SampleEnum::isDefined('TWO'));
@@ -60,7 +60,7 @@ class EnumTraitTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * Tests the `Enum::getName()` method.
+   * Tests the `EnumTrait::getName()` method.
    */
   public function testGetName() {
     $this->assertEquals(SampleEnum::getName('TWO'), '');
@@ -73,14 +73,14 @@ class EnumTraitTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * Tests the `Enum::getNames()` method.
+   * Tests the `EnumTrait::getNames()` method.
    */
   public function testGetNames() {
     $this->assertEquals(['ZERO', 'ONE', 'TWO', 'THREE'], SampleEnum::getNames());
   }
 
   /**
-   * Tests the `Enum::getValues()` method.
+   * Tests the `EnumTrait::getValues()` method.
    */
   public function testGetValues() {
     $this->assertEquals([false, 1, 'two', 3.0], SampleEnum::getValues());
