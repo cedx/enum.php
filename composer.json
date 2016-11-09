@@ -19,12 +19,10 @@
     "optimize-autoloader": true
   },
   "keywords": [
-    "build",
-    "i18n",
-    "phing",
-    "smartling",
-    "task",
-    "translation"
+    "enum",
+    "enumeration",
+    "php",
+    "type"
   ],
   "require": {
     "php": ">=7.0.0"
