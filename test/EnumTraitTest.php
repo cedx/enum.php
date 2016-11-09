@@ -63,13 +63,13 @@ class EnumTraitTest extends \PHPUnit_Framework_TestCase {
    * Tests the `EnumTrait::getName()` method.
    */
   public function testGetName() {
-    $this->assertEquals(SampleEnum::getName('TWO'), '');
-    $this->assertEquals(SampleEnum::getName(3.1), '');
+    $this->assertEquals('', SampleEnum::getName('TWO'));
+    $this->assertEquals('', SampleEnum::getName(3.1));
 
-    $this->assertEquals(SampleEnum::getName(false), 'ZERO');
-    $this->assertEquals(SampleEnum::getName(1), 'ONE');
-    $this->assertEquals(SampleEnum::getName('two'), 'TWO');
-    $this->assertEquals(SampleEnum::getName(3.0), 'THREE');
+    $this->assertEquals('ZERO', SampleEnum::getName(false));
+    $this->assertEquals('ONE', SampleEnum::getName(1));
+    $this->assertEquals('TWO', SampleEnum::getName('two'));
+    $this->assertEquals('THREE', SampleEnum::getName(3.0));
   }
 
   /**
