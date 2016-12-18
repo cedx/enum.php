@@ -65,6 +65,20 @@ DayOfWeek::getValues();
 // [0, 1, 2, 3, 4, 5, 6]
 ```
 
+### Comparison strictness
+When using the `isDefined` or `getName` methods, a loose comparison is performed: the value type is not checked.
+
+To force a strict comparison of the value type, you can use the `$strict` parameter and set it to `true`:
+
+```php
+// Loose comparison.
+DayOfWeek::isDefined('', false); // true: an empty string is loosely equivalent to 0.
+
+// Strict comparison.
+DayOfWeek::isDefined('', true); // false: an empty string is not strictly equal to 0.
+```
+
+
 ## See Also
 - [Code Quality](https://www.codacy.com/app/cedx/enum-php)
 - [Continuous Integration](https://travis-ci.org/cedx/enum.php)
