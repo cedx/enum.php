@@ -57,6 +57,10 @@ class EnumTraitTest extends \PHPUnit_Framework_TestCase {
     $this->assertTrue(SampleEnum::isDefined(1));
     $this->assertTrue(SampleEnum::isDefined('two'));
     $this->assertTrue(SampleEnum::isDefined(3.0));
+
+    $this->assertFalse(SampleEnum::isDefined('', true));
+    $this->assertFalse(SampleEnum::isDefined(1.0, true));
+    $this->assertFalse(SampleEnum::isDefined(3, true));
   }
 
   /**
@@ -70,6 +74,10 @@ class EnumTraitTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals('ONE', SampleEnum::getName(1));
     $this->assertEquals('TWO', SampleEnum::getName('two'));
     $this->assertEquals('THREE', SampleEnum::getName(3.0));
+
+    $this->assertEquals('', SampleEnum::getName(0, true));
+    $this->assertEquals('', SampleEnum::getName(1.0, true));
+    $this->assertEquals('', SampleEnum::getName(3, true));
   }
 
   /**
