@@ -66,16 +66,16 @@ DayOfWeek::getValues();
 ```
 
 ### Comparison strictness
-When using the `isDefined` or `getName` methods, a loose comparison is performed: the value type is not checked.
-
-To force a strict comparison of the value type, you can use the `$strict` parameter and set it to `true`:
+When using the `isDefined` or `getName` methods, a loose comparison is performed: the value type is not checked. To force a strict comparison of the value type, you can use the `$strict` parameter and set it to `true`:
 
 ```php
-// Loose comparison.
-DayOfWeek::isDefined('', false); // true: an empty string is loosely equivalent to 0.
+// Loose comparison: an empty string is equivalent to zero.
+DayOfWeek::isDefined('', false); // true
+DayOfWeek::getName('', false); // "SUNDAY"
 
-// Strict comparison.
-DayOfWeek::isDefined('', true); // false: an empty string is not strictly equal to 0.
+// Strict comparison: an empty string is not equal to zero.
+DayOfWeek::isDefined('', true); // false
+DayOfWeek::getName('', true); // "" (empty)
 ```
 
 
