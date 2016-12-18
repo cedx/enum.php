@@ -17,19 +17,21 @@ trait EnumTrait {
   /**
    * Returns an indication whether a constant with a specified value exists in this enumeration.
    * @param mixed $value The value of a constant in this enumeration.
+   * @param bool $strict Value indicating whether to perform a strict comparison.
    * @return bool `true` if a constant in this enumeration has the specified value, otherwise `false`.
    */
-  public static function isDefined($value): bool {
-    return in_array($value, static::getValues());
+  public static function isDefined($value, bool $strict = false): bool {
+    return in_array($value, static::getValues(), $strict);
   }
 
   /**
    * Retrieves the name of the constant in this enumeration that has the specified value.
    * @param mixed $value The value of a constant in this enumeration.
+   * @param bool $strict Value indicating whether to perform a strict comparison.
    * @return string A string containing the name of the enumerated constant that has the specified value, or an empty string if no such constant is found.
    */
-  public static function getName($value): string {
-    $index = array_search($value, static::getValues());
+  public static function getName($value, bool $strict = false): string {
+    $index = array_search($value, static::getValues(), $strict);
     return is_int($index) ? static::getNames()[$index] : '';
   }
 
