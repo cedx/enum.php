@@ -1,5 +1,5 @@
 # Enums for PHP
-![Release](https://img.shields.io/packagist/v/cedx/enum.svg) ![License](https://img.shields.io/packagist/l/cedx/enum.svg) ![Downloads](https://img.shields.io/packagist/dt/cedx/enum.svg) ![Code quality](https://img.shields.io/codacy/grade/7a0c262318a4418ba7482caae54ae126.svg) ![Build](https://img.shields.io/travis/cedx/enum.php.svg)
+![Release](https://img.shields.io/packagist/v/cedx/enum.svg) ![License](https://img.shields.io/packagist/l/cedx/enum.svg) ![Downloads](https://img.shields.io/packagist/dt/cedx/enum.svg) ![Coverage](https://coveralls.io/repos/github/cedx/enum.php/badge.svg) ![Build](https://img.shields.io/travis/cedx/enum.php.svg)
 
 Yet another implementation of enumerated types for [PHP](https://secure.php.net).
 
@@ -80,8 +80,8 @@ DayOfWeek::getName('', true); // "" (empty)
 
 
 ## See Also
-- [Code Quality](https://www.codacy.com/app/cedx/enum-php)
-- [Continuous Integration](https://travis-ci.org/cedx/enum.php)
+- [Code coverage](https://coveralls.io/github/cedx/enum.php)
+- [Continuous integration](https://travis-ci.org/cedx/enum.php)
 
 ## License
 [Enums for PHP](https://github.com/cedx/enum.php) is distributed under the Apache License, version 2.0.
