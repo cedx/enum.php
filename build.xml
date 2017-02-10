@@ -20,11 +20,10 @@
   </target>
 
   <target name="lint" description="Performs static analysis of source code.">
-    <exec executable="vendor/bin/phpmd" passthru="true">
-      <arg value="lib,test"/>
-      <arg value="text"/>
-      <arg value="codesize,controversial,design,naming,unusedcode"/>
-    </exec>
+    <phplint>
+      <fileset dir="lib" includes="**/*.php"/>
+      <fileset dir="test" includes="**/*.php"/>
+    </phplint>
   </target>
 
   <target name="test" description="Runs the unit tests.">
