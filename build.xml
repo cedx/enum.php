@@ -10,7 +10,7 @@
 
   <target name="coverage" depends="test" description="Sends the results of the code coverage.">
     <exec executable="vendor/bin/coveralls" passthru="true">
-      <arg value="--coverage_clover=var/coverage.xml"/>
+      <arg value="--file=var/coverage.xml"/>
     </exec>
   </target>
 

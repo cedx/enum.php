@@ -32,10 +32,9 @@
     "phpdocumentor/phpdocumentor": "^2.9.0",
     "phpmd/phpmd": "^2.6.0",
     "phpunit/phpunit": "^5.7.12",
-    "satooshi/php-coveralls": "^1.0.1"
   },
   "scripts": {
-    "coverage": "coveralls --coverage_clover=var/coverage.xml",
+    "coverage": "coveralls --file=var/coverage.xml",
     "test": "phpunit"
   },
   "support": {
