@@ -25,13 +25,14 @@
     "type"
   ],
   "require": {
-    "php": ">=7.0.0"
+    "php": ">=7.0.0",
+    "ext-reflection": "*"
   },
   "require-dev": {
     "phing/phing": "^2.16.0",
     "phpdocumentor/phpdocumentor": "^2.9.0",
     "phpmd/phpmd": "^2.6.0",
-    "phpunit/phpunit": "^5.7.12",
+    "phpunit/phpunit": "^6.0.6"
   },
   "scripts": {
     "coverage": "coveralls --file=var/coverage.xml",

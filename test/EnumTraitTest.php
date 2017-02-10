@@ -3,7 +3,9 @@
  * Implementation of the `cedx\test\EnumTraitTest` class.
  */
 namespace cedx\test;
+
 use cedx\{EnumTrait};
+use PHPUnit\Framework\{TestCase};
 
 /**
  * A sample enumeration.
@@ -33,12 +35,12 @@ final class SampleEnum {
 }
 
 /**
- * Tests the features of the `cedx\EnumTrait` trait.
+ * @coversDefaultClass \cedx\EnumTrait
  */
-class EnumTraitTest extends \PHPUnit_Framework_TestCase {
+class EnumTraitTest extends TestCase {
 
   /**
-   * Tests the `EnumTrait` constructor.
+   * @test ::__construct
    */
   public function testConstructor() {
     $constructor = (new \ReflectionClass(SampleEnum::class))->getConstructor();
@@ -47,7 +49,7 @@ class EnumTraitTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * Tests the `EnumTrait::isDefined()` method.
+   * @test ::isDefined
    */
   public function testIsDefined() {
     $this->assertFalse(SampleEnum::isDefined('TWO'));
@@ -64,7 +66,7 @@ class EnumTraitTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * Tests the `EnumTrait::getName()` method.
+   * @test ::getName
    */
   public function testGetName() {
     $this->assertEquals('', SampleEnum::getName('TWO'));
@@ -81,14 +83,14 @@ class EnumTraitTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * Tests the `EnumTrait::getNames()` method.
+   * @test ::getNames
    */
   public function testGetNames() {
     $this->assertEquals(['ZERO', 'ONE', 'TWO', 'THREE'], SampleEnum::getNames());
   }
 
   /**
-   * Tests the `EnumTrait::getValues()` method.
+   * @test ::getValues
    */
   public function testGetValues() {
     $this->assertEquals([false, 1, 'two', 3.0], SampleEnum::getValues());
