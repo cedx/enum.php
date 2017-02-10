@@ -20,7 +20,6 @@ $ composer require cedx/enum
 Just use the `cedx\EnumTrait` trait on a class:
 
 ```php
-<?php
 /**
  * Specifies the day of the week.
  */
@@ -45,7 +44,6 @@ Thus, the obtained enumeration can only contain static members. You should only 
 Check whether a value is defined among the enumerated type:
 
 ```php
-<?php
 DayOfWeek::isDefined(DayOfWeek::TUESDAY); // true
 DayOfWeek::isDefined('Foo'); // false
 ```
@@ -53,7 +51,6 @@ DayOfWeek::isDefined('Foo'); // false
 Get the name associated to an enumerated value:
 
 ```php
-<?php
 DayOfWeek::getName(DayOfWeek::TUESDAY); // "TUESDAY"
 DayOfWeek::getName('Bar'); // "" (empty)
 ```
@@ -61,7 +58,6 @@ DayOfWeek::getName('Bar'); // "" (empty)
 Get information about the enumerated type:
 
 ```php
-<?php
 DayOfWeek::getNames();
 // ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"]
 
@@ -73,7 +69,6 @@ DayOfWeek::getValues();
 When using the `isDefined` or `getName` methods, a loose comparison is performed: the value type is not checked. To force a strict comparison of the value type, you can use the `$strict` parameter and set it to `true`:
 
 ```php
-<?php
 // Loose comparison: an empty string is equivalent to zero.
 DayOfWeek::isDefined('', false); // true
 DayOfWeek::getName('', false); // "SUNDAY"
