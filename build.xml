@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <project default="test" name="enum">
+  <autoloader autoloaderpath="vendor/autoload.php"/>
+
   <target name="clean" description="Deletes all generated files and reset any saved state.">
     <delete>
       <fileset dir="var" includes="**/*" excludes=".gitkeep"/>
