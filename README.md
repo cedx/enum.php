@@ -17,14 +17,14 @@ $ composer require cedx/enum
 ## Usage
 
 ### Create the enumeration
-Just use the `cedx\EnumTrait` trait on a class:
+Just use the `cedx\Enum` trait on a class:
 
 ```php
 /**
  * Specifies the day of the week.
  */
 final class DayOfWeek {
-  use \cedx\EnumTrait;
+  use \cedx\Enum;
   
   const SUNDAY = 0;
   const MONDAY = 1;
@@ -36,7 +36,7 @@ final class DayOfWeek {
 }
 ```
 
-The [`EnumTrait`](https://github.com/cedx/enum.php/blob/master/lib/EnumTrait.php) trait adds a private constructor to the enumerated type: it prohibits its instantiation.
+The [`Enum`](https://github.com/cedx/enum.php/blob/master/lib/Enum.php) trait adds a private constructor to the enumerated type: it prohibits its instantiation.
 
 Thus, the obtained enumeration can only contain static members. You should only use constants, and possibly methods.
 

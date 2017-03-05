@@ -1,6 +1,11 @@
 # Changelog
 This file contains highlights of what changes on each version of the [Enums for PHP](https://github.com/cedx/enum.php) package.
 
+## Version 2.0.0
+- Breaking change: renamed the trait to `Enum`.
+- Ported the unit test assertions from [TDD](https://en.wikipedia.org/wiki/Test-driven_development) to [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development).
+- Updated the package dependencies.
+
 ## Version 1.3.0
 - Updated the package dependencies.
 
