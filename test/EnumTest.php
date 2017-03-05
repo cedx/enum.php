@@ -1,10 +1,10 @@
 <?php
 /**
- * Implementation of the `cedx\test\EnumTraitTest` class.
+ * Implementation of the `cedx\test\EnumTest` class.
  */
 namespace cedx\test;
 
-use cedx\{EnumTrait};
+use cedx\{Enum};
 use Codeception\{Specify};
 use PHPUnit\Framework\{TestCase};
 
@@ -12,7 +12,7 @@ use PHPUnit\Framework\{TestCase};
  * A sample enumeration.
  */
 final class SampleEnum {
-  use EnumTrait;
+  use Enum;
 
   /**
    * @var bool The first enumerated value.
@@ -36,9 +36,9 @@ final class SampleEnum {
 }
 
 /**
- * @coversDefaultClass \cedx\EnumTrait
+ * @coversDefaultClass \cedx\Enum
  */
-class EnumTraitTest extends TestCase {
+class EnumTest extends TestCase {
   use Specify;
 
   /**
@@ -47,8 +47,8 @@ class EnumTraitTest extends TestCase {
   public function testConstructor() {
     $this->specify('should create types that are not instantiable', function() {
       $constructor = (new \ReflectionClass(SampleEnum::class))->getConstructor();
-      $this->assertTrue($constructor->isFinal());
-      $this->assertTrue($constructor->isPrivate());
+      static::assertTrue($constructor->isFinal());
+      static::assertTrue($constructor->isPrivate());
     });
   }
 
@@ -57,21 +57,21 @@ class EnumTraitTest extends TestCase {
    */
   public function testIsDefined() {
     $this->specify('should return `false` for unknown values', function() {
-      $this->assertFalse(SampleEnum::isDefined('TWO'));
-      $this->assertFalse(SampleEnum::isDefined(3.1));
+      static::assertFalse(SampleEnum::isDefined('TWO'));
+      static::assertFalse(SampleEnum::isDefined(3.1));
     });
 
     $this->specify('should return `true` for known values', function() {
-      $this->assertTrue(SampleEnum::isDefined(false));
-      $this->assertTrue(SampleEnum::isDefined(1));
-      $this->assertTrue(SampleEnum::isDefined('two'));
-      $this->assertTrue(SampleEnum::isDefined(3.0));
+      static::assertTrue(SampleEnum::isDefined(false));
+      static::assertTrue(SampleEnum::isDefined(1));
+      static::assertTrue(SampleEnum::isDefined('two'));
+      static::assertTrue(SampleEnum::isDefined(3.0));
     });
 
     $this->specify('should return `false` for similar values in strict mode', function() {
-      $this->assertFalse(SampleEnum::isDefined('', true));
-      $this->assertFalse(SampleEnum::isDefined(1.0, true));
-      $this->assertFalse(SampleEnum::isDefined(3, true));
+      static::assertFalse(SampleEnum::isDefined('', true));
+      static::assertFalse(SampleEnum::isDefined(1.0, true));
+      static::assertFalse(SampleEnum::isDefined(3, true));
     });
   }
 
@@ -80,21 +80,21 @@ class EnumTraitTest extends TestCase {
    */
   public function testGetName() {
     $this->specify('should return an empty string for unknown values', function() {
-      $this->assertEquals('', SampleEnum::getName('TWO'));
-      $this->assertEquals('', SampleEnum::getName(3.1));
+      static::assertEquals('', SampleEnum::getName('TWO'));
+      static::assertEquals('', SampleEnum::getName(3.1));
     });
 
     $this->specify('should return the name for known values', function() {
-      $this->assertEquals('ZERO', SampleEnum::getName(false));
-      $this->assertEquals('ONE', SampleEnum::getName(1));
-      $this->assertEquals('TWO', SampleEnum::getName('two'));
-      $this->assertEquals('THREE', SampleEnum::getName(3.0));
+      static::assertEquals('ZERO', SampleEnum::getName(false));
+      static::assertEquals('ONE', SampleEnum::getName(1));
+      static::assertEquals('TWO', SampleEnum::getName('two'));
+      static::assertEquals('THREE', SampleEnum::getName(3.0));
     });
 
     $this->specify('should return an empty string for similar values in strict mode', function() {
-      $this->assertEquals('', SampleEnum::getName(0, true));
-      $this->assertEquals('', SampleEnum::getName(1.0, true));
-      $this->assertEquals('', SampleEnum::getName(3, true));
+      static::assertEquals('', SampleEnum::getName(0, true));
+      static::assertEquals('', SampleEnum::getName(1.0, true));
+      static::assertEquals('', SampleEnum::getName(3, true));
     });
   }
 
@@ -103,7 +103,7 @@ class EnumTraitTest extends TestCase {
    */
   public function testGetNames() {
     $this->specify('should return the names of the enumerable properties', function() {
-      $this->assertEquals(['ZERO', 'ONE', 'TWO', 'THREE'], SampleEnum::getNames());
+      static::assertEquals(['ZERO', 'ONE', 'TWO', 'THREE'], SampleEnum::getNames());
     });
   }
 
@@ -112,7 +112,7 @@ class EnumTraitTest extends TestCase {
    */
   public function testGetValues() {
     $this->specify('should return the values of the enumerable properties', function() {
-      $this->assertEquals([false, 1, 'two', 3.0], SampleEnum::getValues());
+      static::assertEquals([false, 1, 'two', 3.0], SampleEnum::getValues());
     });
   }
 }

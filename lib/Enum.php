@@ -1,13 +1,13 @@
 <?php
 /**
- * Implementation of the `cedx\EnumTrait` trait.
+ * Implementation of the `cedx\Enum` trait.
  */
 namespace cedx;
 
 /**
  * Provides static methods for enumerations.
  */
-trait EnumTrait {
+trait Enum {
 
   /**
    * Private constructor: prohibit the class instantiation.
@@ -57,7 +57,7 @@ trait EnumTrait {
    */
   private static function getConstants(): array {
     static $constants;
-    if (!isset($constants)) $constants = (new \ReflectionClass(get_called_class()))->getConstants();
+    if (!isset($constants)) $constants = (new \ReflectionClass(static::class))->getConstants();
     return $constants;
   }
 }
