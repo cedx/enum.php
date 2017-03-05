@@ -5,7 +5,6 @@
 namespace cedx\test;
 
 use cedx\{Enum};
-use Codeception\{Specify};
 use PHPUnit\Framework\{TestCase};
 
 /**
@@ -39,16 +38,15 @@ final class SampleEnum {
  * @coversDefaultClass \cedx\Enum
  */
 class EnumTest extends TestCase {
-  use Specify;
 
   /**
    * @test ::__construct
    */
   public function testConstructor() {
-    $this->specify('should create types that are not instantiable', function() {
+    it('should create types that are not instantiable', function() {
       $constructor = (new \ReflectionClass(SampleEnum::class))->getConstructor();
-      static::assertTrue($constructor->isFinal());
-      static::assertTrue($constructor->isPrivate());
+      expect($constructor->isFinal())->to->be->true;
+      expect($constructor->isPrivate())->to->be->true;
     });
   }
 
@@ -56,22 +54,22 @@ class EnumTest extends TestCase {
    * @test ::isDefined
    */
   public function testIsDefined() {
-    $this->specify('should return `false` for unknown values', function() {
-      static::assertFalse(SampleEnum::isDefined('TWO'));
-      static::assertFalse(SampleEnum::isDefined(3.1));
+    it('should return `false` for unknown values', function() {
+      expect(SampleEnum::isDefined('TWO'))->to->be->false;
+      expect(SampleEnum::isDefined(3.1))->to->be->false;
     });
 
-    $this->specify('should return `true` for known values', function() {
-      static::assertTrue(SampleEnum::isDefined(false));
-      static::assertTrue(SampleEnum::isDefined(1));
-      static::assertTrue(SampleEnum::isDefined('two'));
-      static::assertTrue(SampleEnum::isDefined(3.0));
+    it('should return `true` for known values', function() {
+      expect(SampleEnum::isDefined(false))->to->be->true;
+      expect(SampleEnum::isDefined(1))->to->be->true;
+      expect(SampleEnum::isDefined('two'))->to->be->true;
+      expect(SampleEnum::isDefined(3.0))->to->be->true;
     });
 
-    $this->specify('should return `false` for similar values in strict mode', function() {
-      static::assertFalse(SampleEnum::isDefined('', true));
-      static::assertFalse(SampleEnum::isDefined(1.0, true));
-      static::assertFalse(SampleEnum::isDefined(3, true));
+    it('should return `false` for similar values in strict mode', function() {
+      expect(SampleEnum::isDefined('', true))->to->be->false;
+      expect(SampleEnum::isDefined(1.0, true))->to->be->false;
+      expect(SampleEnum::isDefined(3, true))->to->be->false;
     });
   }
 
@@ -79,22 +77,22 @@ class EnumTest extends TestCase {
    * @test ::getName
    */
   public function testGetName() {
-    $this->specify('should return an empty string for unknown values', function() {
-      static::assertEquals('', SampleEnum::getName('TWO'));
-      static::assertEquals('', SampleEnum::getName(3.1));
+    it('should return an empty string for unknown values', function() {
+      expect(SampleEnum::getName('TWO'))->to->be->empty;
+      expect(SampleEnum::getName(3.1))->to->be->empty;
     });
 
-    $this->specify('should return the name for known values', function() {
-      static::assertEquals('ZERO', SampleEnum::getName(false));
-      static::assertEquals('ONE', SampleEnum::getName(1));
-      static::assertEquals('TWO', SampleEnum::getName('two'));
-      static::assertEquals('THREE', SampleEnum::getName(3.0));
+    it('should return the name for known values', function() {
+      expect(SampleEnum::getName(false))->to->equal('ZERO');
+      expect(SampleEnum::getName(1))->to->equal('ONE');
+      expect(SampleEnum::getName('two'))->to->equal('TWO');
+      expect(SampleEnum::getName(3.0))->to->equal('THREE');
     });
 
-    $this->specify('should return an empty string for similar values in strict mode', function() {
-      static::assertEquals('', SampleEnum::getName(0, true));
-      static::assertEquals('', SampleEnum::getName(1.0, true));
-      static::assertEquals('', SampleEnum::getName(3, true));
+    it('should return an empty string for similar values in strict mode', function() {
+      expect(SampleEnum::getName(0, true))->to->be->empty;
+      expect(SampleEnum::getName(1.0, true))->to->be->empty;
+      expect(SampleEnum::getName(3, true))->to->be->empty;
     });
   }
 
@@ -102,8 +100,8 @@ class EnumTest extends TestCase {
    * @test ::getNames
    */
   public function testGetNames() {
-    $this->specify('should return the names of the enumerable properties', function() {
-      static::assertEquals(['ZERO', 'ONE', 'TWO', 'THREE'], SampleEnum::getNames());
+    it('should return the names of the enumerable properties', function() {
+      expect(SampleEnum::getNames())->to->equal(['ZERO', 'ONE', 'TWO', 'THREE']);
     });
   }
 
@@ -111,8 +109,8 @@ class EnumTest extends TestCase {
    * @test ::getValues
    */
   public function testGetValues() {
-    $this->specify('should return the values of the enumerable properties', function() {
-      static::assertEquals([false, 1, 'two', 3.0], SampleEnum::getValues());
+    it('should return the values of the enumerable properties', function() {
+      expect(SampleEnum::getValues())->to->equal([false, 1, 'two', 3.0]);
     });
   }
 }
