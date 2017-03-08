@@ -43,74 +43,65 @@ class EnumTest extends TestCase {
    * @test ::__construct
    */
   public function testConstructor() {
-    it('should create types that are not instantiable', function() {
-      $constructor = (new \ReflectionClass(SampleEnum::class))->getConstructor();
-      expect($constructor->isFinal())->to->be->true;
-      expect($constructor->isPrivate())->to->be->true;
-    });
+    // It should create types that are not instantiable.
+    $constructor = (new \ReflectionClass(SampleEnum::class))->getConstructor();
+    assertThat($constructor->isFinal(), isTrue());
+    assertThat($constructor->isPrivate(), isTrue());
   }
 
   /**
    * @test ::isDefined
    */
   public function testIsDefined() {
-    it('should return `false` for unknown values', function() {
-      expect(SampleEnum::isDefined('TWO'))->to->be->false;
-      expect(SampleEnum::isDefined(3.1))->to->be->false;
-    });
+    // It should return `false` for unknown values.
+    assertThat(SampleEnum::isDefined('TWO'), isFalse());
+    assertThat(SampleEnum::isDefined(3.1), isFalse());
 
-    it('should return `true` for known values', function() {
-      expect(SampleEnum::isDefined(false))->to->be->true;
-      expect(SampleEnum::isDefined(1))->to->be->true;
-      expect(SampleEnum::isDefined('two'))->to->be->true;
-      expect(SampleEnum::isDefined(3.0))->to->be->true;
-    });
+    // It should return `true` for known values.
+    assertThat(SampleEnum::isDefined(false), isTrue());
+    assertThat(SampleEnum::isDefined(1), isTrue());
+    assertThat(SampleEnum::isDefined('two'), isTrue());
+    assertThat(SampleEnum::isDefined(3.0), isTrue());
 
-    it('should return `false` for similar values in strict mode', function() {
-      expect(SampleEnum::isDefined('', true))->to->be->false;
-      expect(SampleEnum::isDefined(1.0, true))->to->be->false;
-      expect(SampleEnum::isDefined(3, true))->to->be->false;
-    });
+    // It should return `false` for similar values in strict mode.
+    assertThat(SampleEnum::isDefined('', true), isFalse());
+    assertThat(SampleEnum::isDefined(1.0, true), isFalse());
+    assertThat(SampleEnum::isDefined(3, true), isFalse());
   }
 
   /**
    * @test ::getName
    */
   public function testGetName() {
-    it('should return an empty string for unknown values', function() {
-      expect(SampleEnum::getName('TWO'))->to->be->empty;
-      expect(SampleEnum::getName(3.1))->to->be->empty;
-    });
+    // It should return an empty string for unknown values.
+    assertThat(SampleEnum::getName('TWO'), isEmpty());
+    assertThat(SampleEnum::getName(3.1), isEmpty());
 
-    it('should return the name for known values', function() {
-      expect(SampleEnum::getName(false))->to->equal('ZERO');
-      expect(SampleEnum::getName(1))->to->equal('ONE');
-      expect(SampleEnum::getName('two'))->to->equal('TWO');
-      expect(SampleEnum::getName(3.0))->to->equal('THREE');
-    });
+    // It should return the name for known values.
+    assertThat(SampleEnum::getName(false), equalTo('ZERO'));
+    assertThat(SampleEnum::getName(1), equalTo('ONE'));
+    assertThat(SampleEnum::getName('two'), equalTo('TWO'));
+    assertThat(SampleEnum::getName(3.0), equalTo('THREE'));
 
-    it('should return an empty string for similar values in strict mode', function() {
-      expect(SampleEnum::getName(0, true))->to->be->empty;
-      expect(SampleEnum::getName(1.0, true))->to->be->empty;
-      expect(SampleEnum::getName(3, true))->to->be->empty;
-    });
+    // It should return an empty string for similar values in strict mode.
+    assertThat(SampleEnum::getName(0, true), isEmpty());
+    assertThat(SampleEnum::getName(1.0, true), isEmpty());
+    assertThat(SampleEnum::getName(3, true), isEmpty());
   }
 
   /**
    * @test ::getNames
    */
   public function testGetNames() {
-    it('should return the names of the enumerable properties', function() {
-      expect(SampleEnum::getNames())->to->equal(['ZERO', 'ONE', 'TWO', 'THREE']);
-    });
+    // It should return the names of the enumerable properties.
+    assertThat(SampleEnum::getNames(), equalTo(['ZERO', 'ONE', 'TWO', 'THREE']));
   }
 
   /**
    * @test ::getValues
    */
   public function testGetValues() {
-    it('should return the values of the enumerable properties', function() {
-      expect(SampleEnum::getValues())->to->equal([false, 1, 'two', 3.0]);
-    });
+    // It should return the values of the enumerable properties.
+    assertThat(SampleEnum::getValues(), equalTo([false, 1, 'two', 3.0]));
   }
 }
