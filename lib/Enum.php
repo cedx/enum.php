@@ -1,7 +1,4 @@
 <?php
-/**
- * Implementation of the `cedx\Enum` trait.
- */
 namespace cedx;
 
 /**

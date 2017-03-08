@@ -1,10 +1,5 @@
 <?php
-/**
- * Implementation of the `cedx\test\EnumTest` class.
- */
-namespace cedx\test;
-
-use cedx\{Enum};
+namespace cedx;
 use PHPUnit\Framework\{TestCase};
 
 /**
@@ -35,12 +30,12 @@ final class SampleEnum {
 }
 
 /**
- * @coversDefaultClass \cedx\Enum
+ * Tests the features of the `cedx\Enum` trait.
  */
 class EnumTest extends TestCase {
 
   /**
-   * @test ::__construct
+   * @test Enum::__construct
    */
   public function testConstructor() {
     // It should create types that are not instantiable.
@@ -50,7 +45,7 @@ class EnumTest extends TestCase {
   }
 
   /**
-   * @test ::isDefined
+   * @test Enum::isDefined
    */
   public function testIsDefined() {
     // It should return `false` for unknown values.
@@ -70,7 +65,7 @@ class EnumTest extends TestCase {
   }
 
   /**
-   * @test ::getName
+   * @test Enum::getName
    */
   public function testGetName() {
     // It should return an empty string for unknown values.
@@ -90,7 +85,7 @@ class EnumTest extends TestCase {
   }
 
   /**
-   * @test ::getNames
+   * @test Enum::getNames
    */
   public function testGetNames() {
     // It should return the names of the enumerable properties.
@@ -98,7 +93,7 @@ class EnumTest extends TestCase {
   }
 
   /**
-   * @test ::getValues
+   * @test Enum::getValues
    */
   public function testGetValues() {
     // It should return the values of the enumerable properties.
