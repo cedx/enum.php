@@ -9,6 +9,5 @@ notifications:
   email: false
 
 install: composer install --no-interaction
-before_script: composer global require cedx/coveralls
 script: composer test
-after_script: '"$HOME/.composer/vendor/bin/coveralls" --file=var/coverage.xml'
+after_script: composer coverage
