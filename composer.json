@@ -29,9 +29,9 @@
     "ext-reflection": "*"
   },
   "require-dev": {
+    "cedx/phpunit-expect": "^0.1.0",
     "phing/phing": "^2.16.0",
-    "phpdocumentor/phpdocumentor": "^2.9.0",
-    "phpunit/phpunit": "^6.0.8"
+    "phpdocumentor/phpdocumentor": "^2.9.0"
   },
   "scripts": {
     "coverage": "coveralls --file=var/coverage.xml",
