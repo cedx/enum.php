@@ -1,12 +1,12 @@
 <?php
-namespace cedx;
+namespace enum;
 use PHPUnit\Framework\{TestCase};
 
 /**
  * A sample enumeration.
  */
 final class SampleEnum {
-  use Enum;
+  use EnumTrait;
 
   /**
    * @var bool The first enumerated value.
@@ -30,12 +30,12 @@ final class SampleEnum {
 }
 
 /**
- * Tests the features of the `cedx\Enum` trait.
+ * Tests the features of the `enum\EnumTrait` trait.
  */
-class EnumTest extends TestCase {
+class EnumTraitTest extends TestCase {
 
   /**
-   * @test Enum::__construct
+   * @test EnumTrait::__construct
    */
   public function testConstructor() {
     it('should create types that are not instantiable', function() {
@@ -46,7 +46,7 @@ class EnumTest extends TestCase {
   }
 
   /**
-   * @test Enum::isDefined
+   * @test EnumTrait::isDefined
    */
   public function testIsDefined() {
     it('should return `false` for unknown values', function() {
@@ -69,7 +69,7 @@ class EnumTest extends TestCase {
   }
 
   /**
-   * @test Enum::getName
+   * @test EnumTrait::getName
    */
   public function testGetName() {
     it('should return an empty string for unknown values', function() {
@@ -92,7 +92,7 @@ class EnumTest extends TestCase {
   }
 
   /**
-   * @test Enum::getNames
+   * @test EnumTrait::getNames
    */
   public function testGetNames() {
     it('should return the names of the enumerable properties', function() {
@@ -101,7 +101,7 @@ class EnumTest extends TestCase {
   }
 
   /**
-   * @test Enum::getValues
+   * @test EnumTrait::getValues
    */
   public function testGetValues() {
     it('should return the values of the enumerable properties', function() {

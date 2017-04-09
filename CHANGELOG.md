@@ -1,6 +1,10 @@
 # Changelog
 This file contains highlights of what changes on each version of the [Enums for PHP](https://github.com/cedx/enum.php) package.
 
+## Version 3.0.0
+- Breaking change: renamed the root namespace to `enum`.
+- Breaking change: reverted the name of the trait to `EnumTrait`.
+
 ## Version 2.0.0
 - Breaking change: renamed the trait to `Enum`.
 - Ported the unit test assertions from [TDD](https://en.wikipedia.org/wiki/Test-driven_development) to [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development).

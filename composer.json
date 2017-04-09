@@ -13,7 +13,7 @@
     "name": "Cédric Belin"
   }],
   "autoload": {
-    "psr-4": {"cedx\\": "lib/"}
+    "psr-4": {"enum\\": "lib/"}
   },
   "config": {
     "optimize-autoloader": true
