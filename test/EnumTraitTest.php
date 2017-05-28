@@ -1,5 +1,7 @@
 <?php
 namespace enum;
+
+use function PHPUnit\Expect\{expect, it};
 use PHPUnit\Framework\{TestCase};
 
 /**
