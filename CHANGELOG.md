@@ -1,6 +1,10 @@
 # Changelog
 This file contains highlights of what changes on each version of the [Enums for PHP](https://github.com/cedx/enum.php) package.
 
+## Version 3.1.0
+- Replaced [phpDocumentor](https://www.phpdoc.org) documentation generator by [ApiGen](https://github.com/ApiGen/ApiGen).
+- Updated the package dependencies.
+
 ## Version 3.0.0
 - Breaking change: renamed the root namespace to `enum`.
 - Breaking change: reverted the name of the trait to `EnumTrait`.

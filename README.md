@@ -80,6 +80,7 @@ DayOfWeek::getName('', true); // "" (empty)
 
 
 ## See also
+- [API reference](https://cedx.github.io/enum.php)
 - [Code coverage](https://coveralls.io/github/cedx/enum.php)
 - [Continuous integration](https://travis-ci.org/cedx/enum.php)
 
