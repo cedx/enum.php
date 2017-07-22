@@ -2,6 +2,7 @@
 This file contains highlights of what changes on each version of the [Enums for PHP](https://github.com/cedx/enum.php) package.
 
 ## Version 3.1.0
+- Enabled the strict typing.
 - Replaced [phpDocumentor](https://www.phpdoc.org) documentation generator by [ApiGen](https://github.com/ApiGen/ApiGen).
 - Updated the package dependencies.
 
