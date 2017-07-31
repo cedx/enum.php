@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace enum;
+namespace Enum;
 
 /**
  * Provides static methods for enumerations.

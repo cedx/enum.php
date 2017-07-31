@@ -11,7 +11,7 @@
     "name": "Cédric Belin"
   }],
   "autoload": {
-    "psr-4": {"enum\\": "lib/"}
+    "psr-4": {"Enum\\": "lib/"}
   },
   "config": {
     "optimize-autoloader": true

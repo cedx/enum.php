@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace enum;
+namespace Enum;
 
 use function PHPUnit\Expect\{expect, it};
 use PHPUnit\Framework\{TestCase};
@@ -33,7 +33,7 @@ final class SampleEnum {
 }
 
 /**
- * Tests the features of the `enum\EnumTrait` trait.
+ * Tests the features of the `Enum\EnumTrait` trait.
  */
 class EnumTraitTest extends TestCase {
 
