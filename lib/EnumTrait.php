@@ -18,7 +18,7 @@ trait EnumTrait {
    * @param bool $strict Value indicating whether to perform a strict comparison.
    * @return bool `true` if a constant in this enumeration has the specified value, otherwise `false`.
    */
-  public static function isDefined($value, bool $strict = false): bool {
+  public static function isDefined($value, bool $strict = true): bool {
     return in_array($value, static::getValues(), $strict);
   }
 
@@ -28,7 +28,7 @@ trait EnumTrait {
    * @param bool $strict Value indicating whether to perform a strict comparison.
    * @return string A string containing the name of the enumerated constant that has the specified value, or an empty string if no such constant is found.
    */
-  public static function getName($value, bool $strict = false): string {
+  public static function getName($value, bool $strict = true): string {
     $index = array_search($value, static::getValues(), $strict);
     return is_int($index) ? static::getNames()[$index] : '';
   }
