@@ -2,6 +2,9 @@
 This file contains highlights of what changes on each version of the [Enums for PHP](https://github.com/cedx/enum.php) package.
 
 ## Version 4.0.0
+- Breaking change: renamed the `enum` namespace to `Enum`.
+- Breaking change: the `$strict` parameter of the `isDefined()` and `getName()` methods is now `true` by default.
+- Added new unit tests.
 
 ## Version 3.1.0
 - Enabled the strict typing.

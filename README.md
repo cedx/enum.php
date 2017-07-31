@@ -17,14 +17,14 @@ $ composer require cedx/enum
 ## Usage
 
 ### Create the enumeration
-Just use the `enum\EnumTrait` trait on a class:
+Just use the `Enum\EnumTrait` trait on a class:
 
 ```php
 /**
  * Specifies the day of the week.
  */
 final class DayOfWeek {
-  use \enum\EnumTrait;
+  use \Enum\EnumTrait;
   
   const SUNDAY = 0;
   const MONDAY = 1;
@@ -66,18 +66,17 @@ DayOfWeek::getValues();
 ```
 
 ### Comparison strictness
-When using the `isDefined` or `getName` methods, a loose comparison is performed: the value type is not checked. To force a strict comparison of the value type, you can use the `$strict` parameter and set it to `true`:
+When using the `isDefined()` or `getName()` methods, a strict comparison is performed: the value's type is checked. To force a loose comparison of the value's type, you can use the `$strict` parameter and set it to `false`:
 
 ```php
-// Loose comparison: an empty string is equivalent to zero.
-DayOfWeek::isDefined('', false); // true
-DayOfWeek::getName('', false); // "SUNDAY"
-
 // Strict comparison: an empty string is not equal to zero.
 DayOfWeek::isDefined('', true); // false
 DayOfWeek::getName('', true); // "" (empty)
-```
 
+// Loose comparison: an empty string is equivalent to zero.
+DayOfWeek::isDefined('', false); // true
+DayOfWeek::getName('', false); // "SUNDAY"
+```
 
 ## See also
 - [API reference](https://cedx.github.io/enum.php)
