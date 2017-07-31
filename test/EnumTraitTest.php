@@ -69,6 +69,12 @@ class EnumTraitTest extends TestCase {
       expect(SampleEnum::isDefined(1.0, true))->to->be->false;
       expect(SampleEnum::isDefined(3, true))->to->be->false;
     });
+
+    it('should return `true` for similar values in loose mode', function() {
+      expect(SampleEnum::isDefined('', false))->to->be->true;
+      expect(SampleEnum::isDefined(1.0, false))->to->be->true;
+      expect(SampleEnum::isDefined(3, false))->to->be->true;
+    });
   }
 
   /**
@@ -91,6 +97,12 @@ class EnumTraitTest extends TestCase {
       expect(SampleEnum::getName(0, true))->to->be->empty;
       expect(SampleEnum::getName(1.0, true))->to->be->empty;
       expect(SampleEnum::getName(3, true))->to->be->empty;
+    });
+
+    it('should return the name for similar values in loose mode', function() {
+      expect(SampleEnum::getName(0, false))->to->equal('ZERO');
+      expect(SampleEnum::getName(1.0, false))->to->equal('ONE');
+      expect(SampleEnum::getName(3, false))->to->equal('THREE');
     });
   }
 
