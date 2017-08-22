@@ -22,6 +22,16 @@ trait EnumTrait {
   }
 
   /**
+   * Retrieves an associative array of the names and values of the constants in this enumeration.
+   * @return array An associative array that contains the names and values of the constants in this enumeration.
+   */
+  public static function getEntries(): array {
+    static $entries;
+    if (!isset($entries)) $entries = (new \ReflectionClass(static::class))->getConstants();
+    return $entries;
+  }
+
+  /**
    * Returns the zero-based position of the constant in this enumeration that has the specified value.
    * @param mixed $value The value of a constant in this enumeration.
    * @return int The zero-based position of the enumerated constant that has the specified value, or `-1` if no such constant is found.
@@ -46,7 +56,7 @@ trait EnumTrait {
    * @return string[] An array that contains the names of the constants in this enumeration.
    */
   public static function getNames(): array {
-    return array_keys(static::getConstants());
+    return array_keys(static::getEntries());
   }
 
   /**
@@ -54,16 +64,6 @@ trait EnumTrait {
    * @return array An array that contains the values of the constants in this enumeration.
    */
   public static function getValues(): array {
-    return array_values(static::getConstants());
-  }
-
-  /**
-   * Retrieves an array of the names and values of the constants in this enumeration.
-   * @return array An array that contains the names and values of the constants in this enumeration.
-   */
-  private static function getConstants(): array {
-    static $constants;
-    if (!isset($constants)) $constants = (new \ReflectionClass(static::class))->getConstants();
-    return $constants;
+    return array_values(static::getEntries());
   }
 }

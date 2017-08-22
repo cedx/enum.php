@@ -65,7 +65,14 @@ class EnumTraitTest extends TestCase {
       expect(SampleEnum::isDefined('two'))->to->be->true;
       expect(SampleEnum::isDefined(3.0))->to->be->true;
     });
+  }
 
+  /**
+   * @test EnumTrait::getEntries
+   */
+  public function testGetEntries() {
+    it('should return the names of the enumerated constants', function() {
+      expect(SampleEnum::getEntries())->to->equal(['ZERO' => false, 'ONE' => 1, 'TWO' => 'two', 'THREE' => 3.0]);
     });
   }
 
