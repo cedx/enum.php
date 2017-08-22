@@ -78,6 +78,35 @@ class EnumTraitTest extends TestCase {
   }
 
   /**
+   * @test EnumTrait::getIndex
+   */
+  public function testGetIndex() {
+    it('should return `-1` for unknown values', function() {
+      expect(SampleEnum::getIndex('TWO'))->to->equal(-1);
+      expect(SampleEnum::getIndex(3.1))->to->equal(-1);
+    });
+
+    it('should return the enumerated constant for known values', function() {
+      expect(SampleEnum::getIndex(false))->to->equal(0);
+      expect(SampleEnum::getIndex(1))->to->equal(1);
+      expect(SampleEnum::getIndex('two'))->to->equal(2);
+      expect(SampleEnum::getIndex(3.0))->to->equal(3);
+    });
+
+    it('should return `-1` for similar values in strict mode', function() {
+      expect(SampleEnum::getIndex(0, true))->to->equal(-1);
+      expect(SampleEnum::getIndex(1.0, true))->to->equal(-1);
+      expect(SampleEnum::getIndex(3, true))->to->equal(-1);
+    });
+
+    it('should return the enumerated constant for similar values in loose mode', function() {
+      expect(SampleEnum::getIndex(0, false))->to->equal(0);
+      expect(SampleEnum::getIndex(1.0, false))->to->equal(1);
+      expect(SampleEnum::getIndex(3, false))->to->equal(3);
+    });
+  }
+
+  /**
    * @test EnumTrait::getName
    */
   public function testGetName() {
@@ -110,7 +139,7 @@ class EnumTraitTest extends TestCase {
    * @test EnumTrait::getNames
    */
   public function testGetNames() {
-    it('should return the names of the enumerable properties', function() {
+    it('should return the names of the enumerated constants', function() {
       expect(SampleEnum::getNames())->to->equal(['ZERO', 'ONE', 'TWO', 'THREE']);
     });
   }
@@ -119,7 +148,7 @@ class EnumTraitTest extends TestCase {
    * @test EnumTrait::getValues
    */
   public function testGetValues() {
-    it('should return the values of the enumerable properties', function() {
+    it('should return the values of the enumerated constants', function() {
       expect(SampleEnum::getValues())->to->equal([false, 1, 'two', 3.0]);
     });
   }
