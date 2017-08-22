@@ -53,6 +53,8 @@ class EnumTraitTest extends TestCase {
    */
   public function testIsDefined() {
     it('should return `false` for unknown values', function() {
+      expect(SampleEnum::isDefined(''))->to->be->false;
+      expect(SampleEnum::isDefined(1.0))->to->be->false;
       expect(SampleEnum::isDefined('TWO'))->to->be->false;
       expect(SampleEnum::isDefined(3.1))->to->be->false;
     });
@@ -64,16 +66,6 @@ class EnumTraitTest extends TestCase {
       expect(SampleEnum::isDefined(3.0))->to->be->true;
     });
 
-    it('should return `false` for similar values in strict mode', function() {
-      expect(SampleEnum::isDefined('', true))->to->be->false;
-      expect(SampleEnum::isDefined(1.0, true))->to->be->false;
-      expect(SampleEnum::isDefined(3, true))->to->be->false;
-    });
-
-    it('should return `true` for similar values in loose mode', function() {
-      expect(SampleEnum::isDefined('', false))->to->be->true;
-      expect(SampleEnum::isDefined(1.0, false))->to->be->true;
-      expect(SampleEnum::isDefined(3, false))->to->be->true;
     });
   }
 
@@ -82,6 +74,8 @@ class EnumTraitTest extends TestCase {
    */
   public function testGetIndex() {
     it('should return `-1` for unknown values', function() {
+      expect(SampleEnum::getIndex(0))->to->equal(-1);
+      expect(SampleEnum::getIndex(1.0))->to->equal(-1);
       expect(SampleEnum::getIndex('TWO'))->to->equal(-1);
       expect(SampleEnum::getIndex(3.1))->to->equal(-1);
     });
@@ -92,18 +86,6 @@ class EnumTraitTest extends TestCase {
       expect(SampleEnum::getIndex('two'))->to->equal(2);
       expect(SampleEnum::getIndex(3.0))->to->equal(3);
     });
-
-    it('should return `-1` for similar values in strict mode', function() {
-      expect(SampleEnum::getIndex(0, true))->to->equal(-1);
-      expect(SampleEnum::getIndex(1.0, true))->to->equal(-1);
-      expect(SampleEnum::getIndex(3, true))->to->equal(-1);
-    });
-
-    it('should return the enumerated constant for similar values in loose mode', function() {
-      expect(SampleEnum::getIndex(0, false))->to->equal(0);
-      expect(SampleEnum::getIndex(1.0, false))->to->equal(1);
-      expect(SampleEnum::getIndex(3, false))->to->equal(3);
-    });
   }
 
   /**
@@ -111,6 +93,8 @@ class EnumTraitTest extends TestCase {
    */
   public function testGetName() {
     it('should return an empty string for unknown values', function() {
+      expect(SampleEnum::getName(0))->to->be->empty;
+      expect(SampleEnum::getName(1.0))->to->be->empty;
       expect(SampleEnum::getName('TWO'))->to->be->empty;
       expect(SampleEnum::getName(3.1))->to->be->empty;
     });
@@ -120,18 +104,6 @@ class EnumTraitTest extends TestCase {
       expect(SampleEnum::getName(1))->to->equal('ONE');
       expect(SampleEnum::getName('two'))->to->equal('TWO');
       expect(SampleEnum::getName(3.0))->to->equal('THREE');
-    });
-
-    it('should return an empty string for similar values in strict mode', function() {
-      expect(SampleEnum::getName(0, true))->to->be->empty;
-      expect(SampleEnum::getName(1.0, true))->to->be->empty;
-      expect(SampleEnum::getName(3, true))->to->be->empty;
-    });
-
-    it('should return the name for similar values in loose mode', function() {
-      expect(SampleEnum::getName(0, false))->to->equal('ZERO');
-      expect(SampleEnum::getName(1.0, false))->to->equal('ONE');
-      expect(SampleEnum::getName(3, false))->to->equal('THREE');
     });
   }
 
