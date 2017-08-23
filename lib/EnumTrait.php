@@ -22,7 +22,7 @@ trait EnumTrait {
   }
 
   /**
-   * Retrieves an associative array of the names and values of the constants in this enumeration.
+   * Gets an associative array of the names and values of the constants in this enumeration.
    * @return array An associative array that contains the names and values of the constants in this enumeration.
    */
   public static function getEntries(): array {
@@ -32,9 +32,9 @@ trait EnumTrait {
   }
 
   /**
-   * Returns the zero-based position of the constant in this enumeration that has the specified value.
+   * Gets the zero-based position of the constant in this enumeration that has the specified value.
    * @param mixed $value The value of a constant in this enumeration.
-   * @return int The zero-based position of the enumerated constant that has the specified value, or `-1` if no such constant is found.
+   * @return int The zero-based position of the constant that has the specified value, or `-1` if no such constant is found.
    */
   public static function getIndex($value): int {
     $index = array_search($value, static::getValues(), true);
@@ -42,9 +42,9 @@ trait EnumTrait {
   }
 
   /**
-   * Retrieves the name of the constant in this enumeration that has the specified value.
+   * Gets the name of the constant in this enumeration that has the specified value.
    * @param mixed $value The value of a constant in this enumeration.
-   * @return string A string containing the name of the enumerated constant that has the specified value, or an empty string if no such constant is found.
+   * @return string A string containing the name of the constant that has the specified value, or an empty string if no such constant is found.
    */
   public static function getName($value): string {
     $index = static::getIndex($value);
@@ -52,7 +52,7 @@ trait EnumTrait {
   }
 
   /**
-   * Retrieves an array of the names of the constants in this enumeration.
+   * Gets an array of the names of the constants in this enumeration.
    * @return string[] An array that contains the names of the constants in this enumeration.
    */
   public static function getNames(): array {
@@ -60,7 +60,7 @@ trait EnumTrait {
   }
 
   /**
-   * Retrieves an array of the values of the constants in this enumeration.
+   * Gets an array of the values of the constants in this enumeration.
    * @return array An array that contains the values of the constants in this enumeration.
    */
   public static function getValues(): array {

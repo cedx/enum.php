@@ -38,44 +38,52 @@ final class DayOfWeek {
 
 The [`EnumTrait`](https://github.com/cedx/enum.php/blob/master/lib/EnumTrait.php) trait adds a private constructor to the enumerated type: it prohibits its instantiation.
 
-Thus, the obtained enumeration can only contain static members. You should only use constants, and possibly methods.
+Thus, the obtained enumeration can only contain static members. You should only use [scalar constants](https://secure.php.net/manual/en/function.is-scalar.php), and possibly methods.
 
 ### Work with the enumeration
 Check whether a value is defined among the enumerated type:
 
 ```php
-DayOfWeek::isDefined(DayOfWeek::TUESDAY); // true
-DayOfWeek::isDefined('Foo'); // false
+DayOfWeek::isDefined(DayOfWeek::SUNDAY); // true
+DayOfWeek::isDefined('foo'); // false
+```
+
+Ensure that a value is defined among the enumerated type:
+
+```php
+DayOfWeek::assert(DayOfWeek::MONDAY); // DayOfWeek::MONDAY
+DayOfWeek::assert('foo'); // (throws \UnexpectedValueException)
+
+DayOfWeek::coerce(DayOfWeek::MONDAY); // DayOfWeek::MONDAY
+DayOfWeek::coerce('bar'); // null
+DayOfWeek::coerce('baz', DayOfWeek::TUESDAY); // DayOfWeek::TUESDAY
+```
+
+Get the zero-based position of a value in the enumerated type declaration:
+
+```php
+DayOfWeek::getIndex(DayOfWeek::WEDNESDAY); // 3
+DayOfWeek::getIndex('foo'); // -1
 ```
 
 Get the name associated to an enumerated value:
 
 ```php
-DayOfWeek::getName(DayOfWeek::TUESDAY); // "TUESDAY"
-DayOfWeek::getName('Bar'); // "" (empty)
+DayOfWeek::getName(DayOfWeek::THURSDAY); // "THURSDAY"
+DayOfWeek::getName('foo'); // "" (empty)
 ```
 
 Get information about the enumerated type:
 
 ```php
+DayOfWeek::getEntries();
+// ["SUNDAY" => 0, "MONDAY" => 1, "TUESDAY" => 2, "WEDNESDAY" => 3, "THURSDAY" => 4, "FRIDAY" => 5, "SATURDAY" => 6]
+
 DayOfWeek::getNames();
 // ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"]
 
 DayOfWeek::getValues();
 // [0, 1, 2, 3, 4, 5, 6]
-```
-
-### Comparison strictness
-When using the `isDefined()` or `getName()` methods, a strict comparison is performed: the value's type is checked. To force a loose comparison of the value's type, you can use the `$strict` parameter and set it to `false`:
-
-```php
-// Strict comparison: an empty string is not equal to zero.
-DayOfWeek::isDefined('', true); // false
-DayOfWeek::getName('', true); // "" (empty)
-
-// Loose comparison: an empty string is equivalent to zero.
-DayOfWeek::isDefined('', false); // true
-DayOfWeek::getName('', false); // "SUNDAY"
 ```
 
 ## See also
