@@ -3,6 +3,7 @@ This file contains highlights of what changes on each version of the [Enums for 
 
 ## Version 5.0.0
 - Breaking change: dropped the `$strict` parameter of the `isDefined()` and `getName()` methods, comparisons are now always strict.
+- Added the `assert()` method.
 - Added the `coerce()` method.
 - Added the `getEntries()` method.
 - Added the `getIndex()` method.

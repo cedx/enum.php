@@ -49,11 +49,41 @@ class EnumTraitTest extends TestCase {
   }
 
   /**
+   * @test EnumTrait::assert
+   */
+  public function testAssert() {
+    it('should return the specified value if it is a known one', function() {
+      expect(SampleEnum::assert(false))->to->equal(SampleEnum::ZERO);
+      expect(SampleEnum::assert(1))->to->equal(SampleEnum::ONE);
+      expect(SampleEnum::assert('two'))->to->equal(SampleEnum::TWO);
+      expect(SampleEnum::assert(3.0))->to->equal(SampleEnum::THREE);
+    });
+
+    it('should throw an exception if it is an unknown value', function() {
+      expect(function() { SampleEnum::assert(''); })->to->throw(\UnexpectedValueException::class);
+      expect(function() { SampleEnum::assert(1.0); })->to->throw(\UnexpectedValueException::class);
+      expect(function() { SampleEnum::assert('TWO'); })->to->throw(\UnexpectedValueException::class);
+      expect(function() { SampleEnum::assert(3.1); })->to->throw(\UnexpectedValueException::class);
+    });
+  }
+
   /**
    * @test EnumTrait::coerce
    */
   public function testCoerce() {
-    // TODO
+    it('should return the specified value if it is a known one', function() {
+      expect(SampleEnum::coerce(false))->to->equal(SampleEnum::ZERO);
+      expect(SampleEnum::coerce(1))->to->equal(SampleEnum::ONE);
+      expect(SampleEnum::coerce('two'))->to->equal(SampleEnum::TWO);
+      expect(SampleEnum::coerce(3.0))->to->equal(SampleEnum::THREE);
+    });
+
+    it('should return the default value if it is an unknown one', function() {
+      expect(SampleEnum::coerce(''))->to->be->null;
+      expect(SampleEnum::coerce(1.0))->to->be->null;
+      expect(SampleEnum::coerce('TWO', SampleEnum::ZERO))->to->equal(SampleEnum::ZERO);
+      expect(SampleEnum::coerce(3.1, SampleEnum::TWO))->to->equal(SampleEnum::TWO);
+    });
   }
 
   /**

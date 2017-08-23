@@ -13,6 +13,16 @@ trait EnumTrait {
   final private function __construct() {}
 
   /**
+   * Returns the specified value if it exists in this enumeration, otherwise throws an exception.
+   * @param mixed $value The value of a constant in this enumeration.
+   * @return mixed The specified enumerated constant.
+   * @throws \UnexpectedValueException No such constant was found.
+   */
+  public static function assert($value) {
+    if (static::isDefined($value)) return $value;
+    throw new \UnexpectedValueException("Invalid enumerated value: $value");
+  }
+
   /**
    * Returns the specified value if it exists in this enumeration, otherwise returns the given default value.
    * @param mixed $value The value of a constant in this enumeration.
