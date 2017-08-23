@@ -49,6 +49,14 @@ class EnumTraitTest extends TestCase {
   }
 
   /**
+  /**
+   * @test EnumTrait::coerce
+   */
+  public function testCoerce() {
+    // TODO
+  }
+
+  /**
    * @test EnumTrait::isDefined
    */
   public function testIsDefined() {

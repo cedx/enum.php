@@ -13,7 +13,18 @@ trait EnumTrait {
   final private function __construct() {}
 
   /**
-   * Returns an indication whether a constant with a specified value exists in this enumeration.
+  /**
+   * Returns the specified value if it exists in this enumeration, otherwise returns the given default value.
+   * @param mixed $value The value of a constant in this enumeration.
+   * @param mixed $defaultValue The default value to return if the specified constant does not exist.
+   * @return mixed The specified enumerated constant, or the default value if no such constant is found.
+   */
+  public static function coerce($value, $defaultValue = null) {
+    return static::isDefined($value) ? $value : $defaultValue;
+  }
+
+  /**
+   * Gets an indication whether a constant with a specified value exists in this enumeration.
    * @param mixed $value The value of a constant in this enumeration.
    * @return bool `true` if a constant in this enumeration has the specified value, otherwise `false`.
    */
