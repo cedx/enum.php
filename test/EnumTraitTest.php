@@ -109,7 +109,7 @@ class EnumTraitTest extends TestCase {
    * @test EnumTrait::getEntries
    */
   public function testGetEntries() {
-    it('should return the names of the enumerated constants', function() {
+    it('should return the pairs of names and values of the enumerated constants', function() {
       expect(SampleEnum::getEntries())->to->equal(['ZERO' => false, 'ONE' => 1, 'TWO' => 'two', 'THREE' => 3.0]);
     });
   }

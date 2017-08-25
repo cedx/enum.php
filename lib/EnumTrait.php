@@ -43,8 +43,8 @@ trait EnumTrait {
   }
 
   /**
-   * Gets an associative array of the names and values of the constants in this enumeration.
-   * @return array An associative array that contains the names and values of the constants in this enumeration.
+   * Gets an associative array of the pairs of names and values of the constants in this enumeration.
+   * @return array An associative array that contains the pairs of names and values of the constants in this enumeration.
    */
   public static function getEntries(): array {
     static $entries;
