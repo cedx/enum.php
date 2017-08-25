@@ -125,7 +125,7 @@ class EnumTraitTest extends TestCase {
       expect(SampleEnum::getIndex(3.1))->to->equal(-1);
     });
 
-    it('should return the enumerated constant for known values', function() {
+    it('should return the index of the enumerated constant for known values', function() {
       expect(SampleEnum::getIndex(false))->to->equal(0);
       expect(SampleEnum::getIndex(1))->to->equal(1);
       expect(SampleEnum::getIndex('two'))->to->equal(2);
