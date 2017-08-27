@@ -1,11 +1,9 @@
 {
   "description": "A simple implementation of enumerated types.",
   "homepage": "https://github.com/cedx/enum.php",
-  "name": "cedx/enum",
-
   "license": "Apache-2.0",
+  "name": "cedx/enum",
   "type": "library",
-
   "authors": [{
     "email": "cedric@belin.io",
     "name": "Cédric Belin"
