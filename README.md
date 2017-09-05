@@ -92,4 +92,4 @@ DayOfWeek::getValues();
 - [Continuous integration](https://travis-ci.org/cedx/enum.php)
 
 ## License
-[Enums for PHP](https://github.com/cedx/enum.php) is distributed under the Apache License, version 2.0.
+[Enums for PHP](https://github.com/cedx/enum.php) is distributed under the MIT License.

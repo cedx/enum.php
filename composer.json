@@ -1,7 +1,7 @@
 {
   "description": "A simple implementation of enumerated types.",
   "homepage": "https://github.com/cedx/enum.php",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "name": "cedx/enum",
   "type": "library",
   "authors": [{
@@ -25,11 +25,9 @@
     "ext-reflection": "*"
   },
   "require-dev": {
-    "apigen/apigen": "^5.0.0-RC5",
     "cedx/coveralls": "^4.0.0",
     "cedx/phpunit-expect": "^0.4.0",
-    "phing/phing": "^2.16.0",
-    "roave/better-reflection": "dev-master#a402048"
+    "phing/phing": "^2.16.0"
   },
   "scripts": {
     "coverage": "coveralls var/coverage.xml",

@@ -7,6 +7,7 @@ This file contains highlights of what changes on each version of the [Enums for 
 - Added the `coerce()` method.
 - Added the `getEntries()` method.
 - Added the `getIndex()` method.
+- Changed licensing for the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Version 4.0.0
 - Breaking change: renamed the `enum` namespace to `Enum`.
