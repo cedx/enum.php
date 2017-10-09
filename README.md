@@ -23,9 +23,9 @@ Just use the `Enum\EnumTrait` trait on a class:
 /**
  * Specifies the day of the week.
  */
-final class DayOfWeek {
+abstract class DayOfWeek {
   use \Enum\EnumTrait;
-  
+
   const SUNDAY = 0;
   const MONDAY = 1;
   const TUESDAY = 2;
