@@ -14,22 +14,32 @@ final class SampleEnum {
   /**
    * @var bool The first enumerated value.
    */
-  const ZERO = false;
+  public const ZERO = false;
 
   /**
    * @var int The second enumerated value.
    */
-  const ONE = 1;
+  public const ONE = 1;
 
   /**
    * @var string The third enumerated value.
    */
-  const TWO = 'two';
+  public const TWO = 'two';
 
   /**
    * @var float The fourth enumerated value.
    */
-  const THREE = 3.0;
+  public const THREE = 3.0;
+
+  /**
+   * @var mixed A protected enumerated value that should be ignored.
+   */
+  protected const PROTECTED_VALUE = null;
+
+  /**
+   * @var mixed A private enumerated value that should be ignored.
+   */
+  private const PRIVATE_VALUE = null;
 }
 
 /**
