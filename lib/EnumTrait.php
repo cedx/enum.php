@@ -48,7 +48,15 @@ trait EnumTrait {
    */
   public static function getEntries(): array {
     static $entries;
-    if (!isset($entries)) $entries = (new \ReflectionClass(static::class))->getConstants();
+
+    if (!isset($entries)) {
+      $entries = [];
+      foreach ((new \ReflectionClass(static::class))->getConstants() as $name => $value) {
+        $reflection = new \ReflectionClassConstant(static::class, $name);
+        if ($reflection->isPublic()) $entries[$name] = $reflection->getValue();
+      }
+    }
+
     return $entries;
   }
 
