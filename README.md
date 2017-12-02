@@ -5,7 +5,7 @@ Yet another implementation of enumerated types for [PHP](https://secure.php.net)
 
 This implementation, based on [traits](https://secure.php.net/manual/en/language.oop5.traits.php), does not try to reproduce the semantics of traditional enumerations, like the ones found in C# or Java languages.
 
-Unlike other PHP implementations, like the [SplEnum](https://secure.php.net/manual/en/class.splenum.php) class, it does not rely on object instances. Instead, it just gives a set of static methods to ease working with the constants of a class representing an enumerated type.
+Unlike other PHP implementations, like the [SplEnum](https://secure.php.net/manual/en/class.splenum.php) class, it does not rely on object instances. Instead, it just gives a set of static methods to ease working with the `public` constants of a class representing an enumerated type.
 
 ## Installing via [Composer](https://getcomposer.org)
 From a command prompt, run:
@@ -26,13 +26,13 @@ Just use the `Enum\EnumTrait` trait on a class:
 final class DayOfWeek {
   use \Enum\EnumTrait;
 
-  const SUNDAY = 0;
-  const MONDAY = 1;
-  const TUESDAY = 2;
-  const WEDNESDAY = 3;
-  const THURSDAY = 4;
-  const FRIDAY = 5;
-  const SATURDAY = 6;
+  public const SUNDAY = 0;
+  public const MONDAY = 1;
+  public const TUESDAY = 2;
+  public const WEDNESDAY = 3;
+  public const THURSDAY = 4;
+  public const FRIDAY = 5;
+  public const SATURDAY = 6;
 }
 ```
 
