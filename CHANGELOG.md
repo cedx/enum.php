@@ -1,6 +1,9 @@
 # Changelog
 This file contains highlights of what changes on each version of the [Enums for PHP](https://github.com/cedx/enum.php) package.
 
+## Version [6.1.0](https://github.com/cedx/enum.php/compare/v6.0.0...v6.1.0)
+- Added a user guide based on [MkDocs](http://www.mkdocs.org).
+
 ## Version [6.0.0](https://github.com/cedx/enum.php/compare/v5.0.0...v6.0.0)
 - Breaking change: raised the required [PHP](https://secure.php.net) version.
 - Breaking change: using PHP 7.1 features, like class constant visibility and void functions.
