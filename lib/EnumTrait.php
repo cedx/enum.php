@@ -18,7 +18,7 @@ trait EnumTrait {
    * @return mixed The specified enumerated constant.
    * @throws \UnexpectedValueException No such constant was found.
    */
-  public static function assert($value) {
+  final public static function assert($value) {
     if (static::isDefined($value)) return $value;
     throw new \UnexpectedValueException("Invalid enumerated value: $value");
   }
@@ -29,7 +29,7 @@ trait EnumTrait {
    * @param mixed $defaultValue The default value to return if the specified constant does not exist.
    * @return mixed The specified enumerated constant, or the default value if no such constant is found.
    */
-  public static function coerce($value, $defaultValue = null) {
+  final public static function coerce($value, $defaultValue = null) {
     return static::isDefined($value) ? $value : $defaultValue;
   }
 
@@ -38,7 +38,7 @@ trait EnumTrait {
    * @param mixed $value The value of a constant in this enumeration.
    * @return bool `true` if a constant in this enumeration has the specified value, otherwise `false`.
    */
-  public static function isDefined($value): bool {
+  final public static function isDefined($value): bool {
     return in_array($value, static::getValues(), true);
   }
 
@@ -46,7 +46,7 @@ trait EnumTrait {
    * Gets an associative array of the pairs of names and values of the constants in this enumeration.
    * @return array An associative array that contains the pairs of names and values of the constants in this enumeration.
    */
-  public static function getEntries(): array {
+  final public static function getEntries(): array {
     static $entries;
 
     if (!isset($entries)) {
@@ -65,7 +65,7 @@ trait EnumTrait {
    * @param mixed $value The value of a constant in this enumeration.
    * @return int The zero-based position of the constant that has the specified value, or `-1` if no such constant is found.
    */
-  public static function getIndex($value): int {
+  final public static function getIndex($value): int {
     $index = array_search($value, static::getValues(), true);
     return $index !== false ? $index : -1;
   }
@@ -75,7 +75,7 @@ trait EnumTrait {
    * @param mixed $value The value of a constant in this enumeration.
    * @return string A string containing the name of the constant that has the specified value, or an empty string if no such constant is found.
    */
-  public static function getName($value): string {
+  final public static function getName($value): string {
     $index = static::getIndex($value);
     return $index >= 0 ? static::getNames()[$index] : '';
   }
@@ -84,7 +84,7 @@ trait EnumTrait {
    * Gets an array of the names of the constants in this enumeration.
    * @return string[] An array that contains the names of the constants in this enumeration.
    */
-  public static function getNames(): array {
+  final public static function getNames(): array {
     return array_keys(static::getEntries());
   }
 
@@ -92,7 +92,7 @@ trait EnumTrait {
    * Gets an array of the values of the constants in this enumeration.
    * @return array An array that contains the values of the constants in this enumeration.
    */
-  public static function getValues(): array {
+  final public static function getValues(): array {
     return array_values(static::getEntries());
   }
 }
