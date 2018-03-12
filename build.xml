@@ -16,7 +16,7 @@
 
   <target name="doc" description="Build the documentation">
     <exec executable="mkdocs" passthru="true">
-      <arg value="build" />
+      <arg value="build"/>
     </exec>
   </target>
 
