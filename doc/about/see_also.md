@@ -6,7 +6,7 @@
 
 ## Testing
 - [Continuous integration](https://travis-ci.org/cedx/enum.php)
-- [Code coverage](https://coveralls.io/github/cedx/enum.php)
+- [Code coverage](https://coveralls.io/github/cedx/enum.php/)
 
 ## Other implementations
 - JavaScript: [Enums for JS](https://cedx.github.io/enum.js)
