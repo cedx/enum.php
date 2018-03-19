@@ -3,7 +3,7 @@
   <title>Enums for PHP</title>
 
   <parser>
-    <target>doc/api</target>
+    <target>build</target>
   </parser>
   <transformer>
     <target>doc/api</target>
