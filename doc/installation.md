@@ -5,7 +5,7 @@ Before installing **Enums for PHP**, you need to make sure you have [PHP](https:
 and [Composer](https://getcomposer.org), the PHP package manager, up and running.
 
 !!! warning
-    Enums for PHP requires PHP >= **7.1.0**.
+    Enums for PHP requires PHP >= **7.2.0**.
     
 You can verify if you're already good to go with the following commands:
 
