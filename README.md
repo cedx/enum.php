@@ -4,10 +4,10 @@
 Yet another implementation of enumerated types for [PHP](https://secure.php.net).
 
 ## Resources
-- [Documentation](https://cedx.github.io/enum.php)
-- [API reference](https://cedx.github.io/enum.php/api)
+- [Documentation](https://dev.belin.io/enum.php)
+- [API reference](https://dev.belin.io/enum.php/api)
 - [Packagist package](https://packagist.org/packages/cedx/enum)
 - [GitHub repository](https://github.com/cedx/enum.php)
 
 ## License
-[Enums for PHP](https://cedx.github.io/enum.php) is distributed under the MIT License.
+[Enums for PHP](https://dev.belin.io/enum.php) is distributed under the MIT License.

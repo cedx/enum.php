@@ -1,7 +1,7 @@
 site_name: Enums for PHP
 site_description: Prevent comment spam using the Enums service, in PHP.
 site_author: Cédric Belin - cedric@belin.io
-site_url: https://cedx.github.io/enum.php
+site_url: https://dev.belin.io/enum.php
 
 docs_dir: doc
 site_dir: web
