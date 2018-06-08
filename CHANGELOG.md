@@ -2,6 +2,7 @@
 
 # Version [7.0.0](https://github.com/cedx/enum.php/compare/v6.1.0...v7.0.0)
 - Breaking change: raised the required [PHP](https://secure.php.net) version.
+- Breaking change: all methods of the `EnumTrait` trait are now final.
 - Updated the package dependencies.
 
 ## Version [6.1.0](https://github.com/cedx/enum.php/compare/v6.0.0...v6.1.0)
