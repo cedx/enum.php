@@ -28,9 +28,9 @@
     "ext-reflection": "*"
   },
   "require-dev": {
-    "cedx/coveralls": "^7.2.0",
+    "cedx/coveralls": "^8.0.0",
     "phing/phing": "^2.16.1",
-    "phpunit/phpunit": "^7.3.0"
+    "phpunit/phpunit": "^7.3.1"
   },
   "scripts": {
     "coverage": "coveralls var/coverage.xml",
