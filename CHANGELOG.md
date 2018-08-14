@@ -1,5 +1,8 @@
 # Changelog
 
+# Version [7.2.0](https://github.com/cedx/enum.php/compare/v7.1.0...v7.2.0)
+- Updated the package dependencies.
+
 # Version [7.1.0](https://github.com/cedx/enum.php/compare/v7.0.0...v7.1.0)
 - Dropped the dependency on [PHPUnit-Expect](https://dev.belin.io/phpunit-expect).
 
