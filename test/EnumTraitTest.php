@@ -13,22 +13,22 @@ final class SampleEnum {
   /**
    * @var bool The first enumerated value.
    */
-  public const ZERO = false;
+  const ZERO = false;
 
   /**
    * @var int The second enumerated value.
    */
-  public const ONE = 1;
+  const ONE = 1;
 
   /**
    * @var string The third enumerated value.
    */
-  public const TWO = 'two';
+  const TWO = 'two';
 
   /**
    * @var float The fourth enumerated value.
    */
-  public const THREE = 3.0;
+  const THREE = 3.0;
 
   /**
    * @var mixed A protected enumerated value that should be ignored.
@@ -49,7 +49,7 @@ class EnumTraitTest extends TestCase {
   /**
    * @test EnumTrait::__construct
    */
-  public function testConstructor(): void {
+  function testConstructor(): void {
     // It should create types that are not instantiable.
     $constructor = (new \ReflectionClass(SampleEnum::class))->getConstructor();
     assertThat($constructor->isFinal(), isTrue());
@@ -59,7 +59,7 @@ class EnumTraitTest extends TestCase {
   /**
    * @test EnumTrait::assert
    */
-  public function testAssert(): void {
+  function testAssert(): void {
     // It should return the specified value if it is a known one.
     assertThat(SampleEnum::assert(false), equalTo(SampleEnum::ZERO));
     assertThat(SampleEnum::assert(1), equalTo(SampleEnum::ONE));
@@ -74,7 +74,7 @@ class EnumTraitTest extends TestCase {
   /**
    * @test EnumTrait::coerce
    */
-  public function testCoerce(): void {
+  function testCoerce(): void {
     // It should return the specified value if it is a known one.
     assertThat(SampleEnum::coerce(false), equalTo(SampleEnum::ZERO));
     assertThat(SampleEnum::coerce(1), equalTo(SampleEnum::ONE));
@@ -91,7 +91,7 @@ class EnumTraitTest extends TestCase {
   /**
    * @test EnumTrait::isDefined
    */
-  public function testIsDefined(): void {
+  function testIsDefined(): void {
     // It should return `false` for unknown values.
     assertThat(SampleEnum::isDefined(''), isFalse());
     assertThat(SampleEnum::isDefined(1.0), isFalse());
@@ -108,7 +108,7 @@ class EnumTraitTest extends TestCase {
   /**
    * @test EnumTrait::getEntries
    */
-  public function testGetEntries(): void {
+  function testGetEntries(): void {
     // It should return the pairs of names and values of the enumerated constants.
     assertThat(SampleEnum::getEntries(), equalTo(['ZERO' => false, 'ONE' => 1, 'TWO' => 'two', 'THREE' => 3.0]));
   }
@@ -116,7 +116,7 @@ class EnumTraitTest extends TestCase {
   /**
    * @test EnumTrait::getIndex
    */
-  public function testGetIndex(): void {
+  function testGetIndex(): void {
     // It should return `-1` for unknown values.
     assertThat(SampleEnum::getIndex(0), equalTo(-1));
     assertThat(SampleEnum::getIndex(1.0), equalTo(-1));
@@ -133,7 +133,7 @@ class EnumTraitTest extends TestCase {
   /**
    * @test EnumTrait::getName
    */
-  public function testGetName(): void {
+  function testGetName(): void {
     // It should return an empty string for unknown values.
     assertThat(SampleEnum::getName(0), isEmpty());
     assertThat(SampleEnum::getName(1.0), isEmpty());
@@ -150,7 +150,7 @@ class EnumTraitTest extends TestCase {
   /**
    * @test EnumTrait::getNames
    */
-  public function testGetNames(): void {
+  function testGetNames(): void {
     // It should return the names of the enumerated constants.
     assertThat(SampleEnum::getNames(), equalTo(['ZERO', 'ONE', 'TWO', 'THREE']));
   }
@@ -158,7 +158,7 @@ class EnumTraitTest extends TestCase {
   /**
    * @test EnumTrait::getValues
    */
-  public function testGetValues(): void {
+  function testGetValues(): void {
     // It should return the values of the enumerated constants.
     assertThat(SampleEnum::getValues(), equalTo([false, 1, 'two', 3.0]));
   }
