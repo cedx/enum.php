@@ -51,9 +51,10 @@ class EnumTraitTest extends TestCase {
    */
   function testConstructor(): void {
     // It should create types that are not instantiable.
-    $constructor = (new \ReflectionClass(SampleEnum::class))->getConstructor();
-    assertThat($constructor->isFinal(), isTrue());
-    assertThat($constructor->isPrivate(), isTrue());
+    if ($constructor = (new \ReflectionClass(SampleEnum::class))->getConstructor()) {
+      assertThat($constructor->isFinal(), isTrue());
+      assertThat($constructor->isPrivate(), isTrue());
+    }
   }
 
   /**
