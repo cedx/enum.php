@@ -29,7 +29,7 @@
     "ext-reflection": "*"
   },
   "require-dev": {
-    "cedx/coveralls": "^8.0.0",
+    "cedx/coveralls": "^9.0.0",
     "phing/phing": "^2.16.1",
     "phpstan/phpstan": "^0.10.3",
     "phpunit/phpunit": "^7.3.1"
