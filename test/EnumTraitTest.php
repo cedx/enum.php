@@ -47,7 +47,7 @@ final class SampleEnum {
 class EnumTraitTest extends TestCase {
 
   /**
-   * @test EnumTrait::__construct
+   * Tests the `EnumTrait` constructor.
    */
   function testConstructor(): void {
     // It should create types that are not instantiable.
@@ -58,7 +58,7 @@ class EnumTraitTest extends TestCase {
   }
 
   /**
-   * @test EnumTrait::assert
+   * Tests the `EnumTrait::assert()` method.
    */
   function testAssert(): void {
     // It should return the specified value if it is a known one.
@@ -73,7 +73,7 @@ class EnumTraitTest extends TestCase {
   }
 
   /**
-   * @test EnumTrait::coerce
+   * Tests the `EnumTrait::coerce()` method.
    */
   function testCoerce(): void {
     // It should return the specified value if it is a known one.
@@ -90,7 +90,7 @@ class EnumTraitTest extends TestCase {
   }
 
   /**
-   * @test EnumTrait::isDefined
+   * Tests the `EnumTrait::isDefined()` method.
    */
   function testIsDefined(): void {
     // It should return `false` for unknown values.
@@ -107,7 +107,7 @@ class EnumTraitTest extends TestCase {
   }
 
   /**
-   * @test EnumTrait::getEntries
+   * Tests the `EnumTrait::getEntries()` method.
    */
   function testGetEntries(): void {
     // It should return the pairs of names and values of the enumerated constants.
@@ -115,7 +115,7 @@ class EnumTraitTest extends TestCase {
   }
 
   /**
-   * @test EnumTrait::getIndex
+   * Tests the `EnumTrait::getIndex()` method.
    */
   function testGetIndex(): void {
     // It should return `-1` for unknown values.
@@ -132,7 +132,7 @@ class EnumTraitTest extends TestCase {
   }
 
   /**
-   * @test EnumTrait::getName
+   * Tests the `EnumTrait::getName()` method.
    */
   function testGetName(): void {
     // It should return an empty string for unknown values.
@@ -149,7 +149,7 @@ class EnumTraitTest extends TestCase {
   }
 
   /**
-   * @test EnumTrait::getNames
+   * Tests the `EnumTrait::getNames()` method.
    */
   function testGetNames(): void {
     // It should return the names of the enumerated constants.
@@ -157,7 +157,7 @@ class EnumTraitTest extends TestCase {
   }
 
   /**
-   * @test EnumTrait::getValues
+   * Tests the `EnumTrait::getValues()` method.
    */
   function testGetValues(): void {
     // It should return the values of the enumerated constants.
