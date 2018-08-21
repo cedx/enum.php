@@ -1,5 +1,9 @@
 # Changelog
 
+# Version [7.3.0](https://github.com/cedx/enum.php/compare/v7.2.0...v7.3.0)
+- Added support for [PHPStan](https://github.com/phpstan/phpstan) static analyzer.
+- Updated the package dependencies.
+
 # Version [7.2.0](https://github.com/cedx/enum.php/compare/v7.1.0...v7.2.0)
 - Updated the package dependencies.
 
