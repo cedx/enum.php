@@ -48,6 +48,7 @@ class EnumTraitTest extends TestCase {
 
   /**
    * Tests the `EnumTrait` constructor.
+   * @test
    */
   function testConstructor(): void {
     // It should create types that are not instantiable.
@@ -59,6 +60,7 @@ class EnumTraitTest extends TestCase {
 
   /**
    * Tests the `EnumTrait::assert()` method.
+   * @test
    */
   function testAssert(): void {
     // It should return the specified value if it is a known one.
@@ -74,6 +76,7 @@ class EnumTraitTest extends TestCase {
 
   /**
    * Tests the `EnumTrait::coerce()` method.
+   * @test
    */
   function testCoerce(): void {
     // It should return the specified value if it is a known one.
@@ -91,6 +94,7 @@ class EnumTraitTest extends TestCase {
 
   /**
    * Tests the `EnumTrait::isDefined()` method.
+   * @test
    */
   function testIsDefined(): void {
     // It should return `false` for unknown values.
@@ -108,6 +112,7 @@ class EnumTraitTest extends TestCase {
 
   /**
    * Tests the `EnumTrait::getEntries()` method.
+   * @test
    */
   function testGetEntries(): void {
     // It should return the pairs of names and values of the enumerated constants.
@@ -116,6 +121,7 @@ class EnumTraitTest extends TestCase {
 
   /**
    * Tests the `EnumTrait::getIndex()` method.
+   * @test
    */
   function testGetIndex(): void {
     // It should return `-1` for unknown values.
@@ -133,6 +139,7 @@ class EnumTraitTest extends TestCase {
 
   /**
    * Tests the `EnumTrait::getName()` method.
+   * @test
    */
   function testGetName(): void {
     // It should return an empty string for unknown values.
@@ -150,6 +157,7 @@ class EnumTraitTest extends TestCase {
 
   /**
    * Tests the `EnumTrait::getNames()` method.
+   * @test
    */
   function testGetNames(): void {
     // It should return the names of the enumerated constants.
@@ -158,6 +166,7 @@ class EnumTraitTest extends TestCase {
 
   /**
    * Tests the `EnumTrait::getValues()` method.
+   * @test
    */
   function testGetValues(): void {
     // It should return the values of the enumerated constants.
