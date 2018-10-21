@@ -11,10 +11,10 @@ You can verify if you're already good to go with the following commands:
 
 ```shell
 php --version
-# PHP 7.2.3-1ubuntu1 (cli) (built: Mar 14 2018 22:03:58) ( NTS )
+# PHP 7.2.10-0ubuntu0.18.04.1 (cli) (built: Sep 13 2018 13:45:02) ( NTS )
 
 composer --version
-# Composer version 1.6.4 2018-04-13 12:04:24
+# Composer version 1.7.2 2018-08-16 16:57:12
 ```
 
 !!! info
