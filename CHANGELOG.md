@@ -1,5 +1,9 @@
 # Changelog
 
+# Version [7.4.0](https://github.com/cedx/enum.php/compare/v7.3.0...v7.4.0)
+- Replaced the [Phing](https://www.phing.info) build system by [Robo](https://robo.li).
+- Updated the package dependencies.
+
 # Version [7.3.0](https://github.com/cedx/enum.php/compare/v7.2.0...v7.3.0)
 - Added support for [PHPStan](https://github.com/phpstan/phpstan) static analyzer.
 - Updated the package dependencies.
@@ -22,7 +26,7 @@
 ## Version [6.0.0](https://github.com/cedx/enum.php/compare/v5.0.0...v6.0.0)
 - Breaking change: raised the required [PHP](https://secure.php.net) version.
 - Breaking change: using PHP 7.1 features, like class constant visibility and void functions.
-- Fixed the [issue #1](https://github.com/cedx/enum.php/issues/1): `protected` and `private` constants are now ignored.
+- Fixed the [GitHub issue #1](https://github.com/cedx/enum.php/issues/1): `protected` and `private` constants are now ignored.
 
 ## Version [5.0.0](https://github.com/cedx/enum.php/compare/v4.0.0...v5.0.0)
 - Breaking change: dropped the `$strict` parameter of the `isDefined()` and `getName()` methods, comparisons are now always strict.
