@@ -1,4 +1,4 @@
-path: blob/master
+path: src/branch/master
 source: lib/EnumTrait.php
 # Usage
 
