@@ -1,5 +1,5 @@
 # Enums for PHP
-![Runtime](https://img.shields.io/badge/php-%3E%3D7.2-brightgreen.svg) ![Release](https://img.shields.io/packagist/v/cedx/enum.svg) ![License](https://img.shields.io/packagist/l/cedx/enum.svg) ![Downloads](https://img.shields.io/packagist/dt/cedx/enum.svg) ![Coverage](https://coveralls.io/repos/github/cedx/enum.php/badge.svg) ![Build](https://travis-ci.com/cedx/enum.php.svg)
+![Runtime](https://img.shields.io/packagist/php-v/cedx/enum.svg) ![Release](https://img.shields.io/packagist/v/cedx/enum.svg) ![License](https://img.shields.io/packagist/l/cedx/enum.svg) ![Downloads](https://img.shields.io/packagist/dt/cedx/enum.svg) ![Coverage](https://coveralls.io/repos/github/cedx/enum.php/badge.svg) ![Build](https://travis-ci.com/cedx/enum.php.svg)
 
 Yet another implementation of enumerated types for [PHP](https://secure.php.net).
 
