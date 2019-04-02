@@ -1,5 +1,5 @@
 path: blob/master
-source: lib/EnumTrait.php
+source: src/EnumTrait.php
 # Usage
 
 ## Create the enumeration
