@@ -1,5 +1,9 @@
 # Changelog
 
+# Version [7.5.0](https://github.com/cedx/enum.php/compare/v7.4.0...v7.5.0)
+- Modified the package layout.
+- Updated the package dependencies.
+
 # Version [7.4.0](https://github.com/cedx/enum.php/compare/v7.3.0...v7.4.0)
 - Replaced the [Phing](https://www.phing.info) build system by [Robo](https://robo.li).
 - Updated the package dependencies.
