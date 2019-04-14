@@ -1,4 +1,5 @@
 # Enums <small>for PHP</small>
+![Runtime](https://img.shields.io/packagist/php-v/cedx/enum.svg) ![Release](https://img.shields.io/packagist/v/cedx/enum.svg) ![License](https://img.shields.io/packagist/l/cedx/enum.svg) ![Downloads](https://img.shields.io/packagist/dt/cedx/enum.svg) ![Coverage](https://coveralls.io/repos/github/cedx/enum.php/badge.svg) ![Build](https://travis-ci.com/cedx/enum.php.svg)
 
 ## Yet another implementation of enumerated types
 This implementation, based on [traits](https://secure.php.net/manual/en/language.oop5.traits.php), does not try to reproduce the semantics of traditional enumerations, like the ones found in C# or Java languages.
