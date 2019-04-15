@@ -1,14 +1,10 @@
 <?php declare(strict_types=1);
 namespace Enum;
 
-/**
- * Provides static methods for enumerations.
- */
+/** Provides static methods for enumerations. */
 trait EnumTrait {
 
-  /**
-   * Private constructor: prohibits the class instantiation.
-   */
+  /** Private constructor: prohibits the class instantiation. */
   final private function __construct() {}
 
   /**
@@ -47,7 +43,6 @@ trait EnumTrait {
    */
   final static function getEntries(): array {
     static $entries;
-
     if (!isset($entries)) {
       $entries = [];
       foreach ((new \ReflectionClass(static::class))->getConstants() as $name => $value) {
