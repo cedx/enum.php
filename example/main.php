@@ -1,9 +1,7 @@
 <?php declare(strict_types=1);
 use Enum\{EnumTrait};
 
-/**
- * Specifies the day of the week.
- */
+/** Specifies the day of the week. */
 final class DayOfWeek {
   use EnumTrait;
 
@@ -16,9 +14,7 @@ final class DayOfWeek {
   const SATURDAY = 6;
 }
 
-/**
- * Works with the enumeration.
- */
+/** Works with the enumeration. */
 function main(): void {
   // Check whether a value is defined among the enumerated type.
   DayOfWeek::isDefined(DayOfWeek::SUNDAY); // true

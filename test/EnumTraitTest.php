@@ -40,8 +40,7 @@ final class SampleEnum {
   private const PRIVATE_VALUE = null;
 }
 
-/**
- * Tests the features of the `Enum\EnumTrait` trait.
+/** Tests the features of the `Enum\EnumTrait` trait.
  */
 class EnumTraitTest extends TestCase {
 
