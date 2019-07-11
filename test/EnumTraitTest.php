@@ -1,6 +1,7 @@
 <?php declare(strict_types=1);
 namespace Enum;
 
+use function PHPUnit\Expect\{expect, it};
 use PHPUnit\Framework\{TestCase};
 
 /** A sample enumeration. */
@@ -31,101 +32,114 @@ class EnumTraitTest extends TestCase {
 
   /** @test EnumTrait->__construct() */
   function testConstructor(): void {
-    // It should create types that are not instantiable.
-    if ($constructor = (new \ReflectionClass(SampleEnum::class))->getConstructor()) {
-      assertThat($constructor->isFinal(), isTrue());
-      assertThat($constructor->isPrivate(), isTrue());
-    }
+    it('should create types that are not instantiable', function() {
+      if ($constructor = (new \ReflectionClass(SampleEnum::class))->getConstructor()) {
+        expect($constructor->isFinal())->to->be->true;
+        expect($constructor->isPrivate())->to->be->true;
+      }
+    });
   }
 
   /** @test EnumTrait::assert() */
   function testAssert(): void {
-    // It should return the specified value if it is a known one.
-    assertThat(SampleEnum::assert(false), equalTo(SampleEnum::zero));
-    assertThat(SampleEnum::assert(1), equalTo(SampleEnum::one));
-    assertThat(SampleEnum::assert('TWO'), equalTo(SampleEnum::two));
-    assertThat(SampleEnum::assert(3.0), equalTo(SampleEnum::three));
+    it('should return the specified value if it is a known one', function() {
+      expect(SampleEnum::assert(false))->to->equal(SampleEnum::zero);
+      expect(SampleEnum::assert(1))->to->equal(SampleEnum::one);
+      expect(SampleEnum::assert('TWO'))->to->equal(SampleEnum::two);
+      expect(SampleEnum::assert(3.0))->to->equal(SampleEnum::three);
+    });
 
-    // It should throw an exception if it is an unknown value.
-    $this->expectException(\UnexpectedValueException::class);
-    SampleEnum::assert('');
+    it('should throw an exception if it is an unknown value', function() {
+      expect(function() { SampleEnum::assert(''); })->to->throw(\UnexpectedValueException::class);
+    });
   }
 
   /** @test EnumTrait::coerce() */
   function testCoerce(): void {
-    // It should return the specified value if it is a known one.
-    assertThat(SampleEnum::coerce(false), equalTo(SampleEnum::zero));
-    assertThat(SampleEnum::coerce(1), equalTo(SampleEnum::one));
-    assertThat(SampleEnum::coerce('TWO'), equalTo(SampleEnum::two));
-    assertThat(SampleEnum::coerce(3.0), equalTo(SampleEnum::three));
+    it('should return the specified value if it is a known one', function() {
+      expect(SampleEnum::coerce(false))->to->equal(SampleEnum::zero);
+      expect(SampleEnum::coerce(1))->to->equal(SampleEnum::one);
+      expect(SampleEnum::coerce('TWO'))->to->equal(SampleEnum::two);
+      expect(SampleEnum::coerce(3.0))->to->equal(SampleEnum::three);
+    });
 
-    // It should return the default value if it is an unknown one.
-    assertThat(SampleEnum::coerce(''), isNull());
-    assertThat(SampleEnum::coerce(1.0), isNull());
-    assertThat(SampleEnum::coerce('two', SampleEnum::zero), equalTo(SampleEnum::zero));
-    assertThat(SampleEnum::coerce(3.1, SampleEnum::two), equalTo(SampleEnum::two));
+    it('should return the default value if it is an unknown one', function() {
+      expect(SampleEnum::coerce(''))->to->be->null;
+      expect(SampleEnum::coerce(1.0))->to->be->null;
+      expect(SampleEnum::coerce('two', SampleEnum::zero))->to->equal(SampleEnum::zero);
+      expect(SampleEnum::coerce(3.1, SampleEnum::two))->to->equal(SampleEnum::two);
+    });
   }
 
   /** @test EnumTrait::isDefined() */
   function testIsDefined(): void {
-    // It should return `false` for unknown values.
-    assertThat(SampleEnum::isDefined(''), isFalse());
-    assertThat(SampleEnum::isDefined(1.0), isFalse());
-    assertThat(SampleEnum::isDefined('two'), isFalse());
-    assertThat(SampleEnum::isDefined(3.1), isFalse());
+    it('should return `false` for unknown values', function() {
+      expect(SampleEnum::isDefined(''))->to->be->false;
+      expect(SampleEnum::isDefined(1.0))->to->be->false;
+      expect(SampleEnum::isDefined('two'))->to->be->false;
+      expect(SampleEnum::isDefined(3.1))->to->be->false;
+    });
 
-    // It should return `true` for known values.
-    assertThat(SampleEnum::isDefined(false), isTrue());
-    assertThat(SampleEnum::isDefined(1), isTrue());
-    assertThat(SampleEnum::isDefined('TWO'), isTrue());
-    assertThat(SampleEnum::isDefined(3.0), isTrue());
+    it('should return `true` for known values', function() {
+      expect(SampleEnum::isDefined(false))->to->be->true;
+      expect(SampleEnum::isDefined(1))->to->be->true;
+      expect(SampleEnum::isDefined('TWO'))->to->be->true;
+      expect(SampleEnum::isDefined(3.0))->to->be->true;
+    });
   }
 
   /** @test EnumTrait::getEntries() */
   function testGetEntries(): void {
-    // It should return the pairs of names and values of the enumerated constants.
-    assertThat(SampleEnum::getEntries(), equalTo(['zero' => false, 'one' => 1, 'two' => 'TWO', 'three' => 3.0]));
+    it('should return the pairs of names and values of the enumerated constants', function() {
+      expect(SampleEnum::getEntries())->to->equal(['zero' => false, 'one' => 1, 'two' => 'TWO', 'three' => 3.0]);
+    });
   }
 
   /** @test EnumTrait::getIndex() */
   function testGetIndex(): void {
-    // It should return `-1` for unknown values.
-    assertThat(SampleEnum::getIndex(0), equalTo(-1));
-    assertThat(SampleEnum::getIndex(1.0), equalTo(-1));
-    assertThat(SampleEnum::getIndex('two'), equalTo(-1));
-    assertThat(SampleEnum::getIndex(3.1), equalTo(-1));
+    it('should return `-1` for unknown values', function() {
+      expect(SampleEnum::getIndex(0))->to->equal(-1);
+      expect(SampleEnum::getIndex(1.0))->to->equal(-1);
+      expect(SampleEnum::getIndex('two'))->to->equal(-1);
+      expect(SampleEnum::getIndex(3.1))->to->equal(-1);
+    });
 
-    // It should return the index of the enumerated constant for known values.
-    assertThat(SampleEnum::getIndex(false), equalTo(0));
-    assertThat(SampleEnum::getIndex(1), equalTo(1));
-    assertThat(SampleEnum::getIndex('TWO'), equalTo(2));
-    assertThat(SampleEnum::getIndex(3.0), equalTo(3));
+    it('should return the index of the enumerated constant for known values', function() {
+      expect(SampleEnum::getIndex(false))->to->equal(0);
+      expect(SampleEnum::getIndex(1))->to->equal(1);
+      expect(SampleEnum::getIndex('TWO'))->to->equal(2);
+      expect(SampleEnum::getIndex(3.0))->to->equal(3);
+    });
   }
 
   /** @test EnumTrait::getName() */
   function testGetName(): void {
-    // It should return an empty string for unknown values.
-    assertThat(SampleEnum::getName(0), isEmpty());
-    assertThat(SampleEnum::getName(1.0), isEmpty());
-    assertThat(SampleEnum::getName('two'), isEmpty());
-    assertThat(SampleEnum::getName(3.1), isEmpty());
+    it('should return an empty string for unknown values', function() {
+      expect(SampleEnum::getName(0))->to->be->empty;
+      expect(SampleEnum::getName(1.0))->to->be->empty;
+      expect(SampleEnum::getName('two'))->to->be->empty;
+      expect(SampleEnum::getName(3.1))->to->be->empty;
+    });
 
-    // It should return the name for known values.
-    assertThat(SampleEnum::getName(false), equalTo('zero'));
-    assertThat(SampleEnum::getName(1), equalTo('one'));
-    assertThat(SampleEnum::getName('TWO'), equalTo('two'));
-    assertThat(SampleEnum::getName(3.0), equalTo('three'));
+    it('should return the name for known values', function() {
+      expect(SampleEnum::getName(false))->to->equal('zero');
+      expect(SampleEnum::getName(1))->to->equal('one');
+      expect(SampleEnum::getName('TWO'))->to->equal('two');
+      expect(SampleEnum::getName(3.0))->to->equal('three');
+    });
   }
 
   /** @test EnumTrait::getNames() */
   function testGetNames(): void {
-    // It should return the names of the enumerated constants.
-    assertThat(SampleEnum::getNames(), equalTo(['zero', 'one', 'two', 'three']));
+    it('should return the names of the enumerated constants', function() {
+      expect(SampleEnum::getNames())->to->equal(['zero', 'one', 'two', 'three']);
+    });
   }
 
   /** @test EnumTrait::getValues() */
   function testGetValues(): void {
-    // It should return the values of the enumerated constants.
-    assertThat(SampleEnum::getValues(), equalTo([false, 1, 'TWO', 3.0]));
+    it('should return the values of the enumerated constants', function() {
+      expect(SampleEnum::getValues())->to->equal([false, 1, 'TWO', 3.0]);
+    });
   }
 }
