@@ -35,7 +35,7 @@ Check whether a value is defined among the enumerated type:
 ```php
 <?php
 DayOfWeek::isDefined(DayOfWeek::sunday); // true
-DayOfWeek::isDefined('foo'); // false
+DayOfWeek::isDefined(123); // false
 ```
 
 Ensure that a value is defined among the enumerated type:
@@ -43,11 +43,11 @@ Ensure that a value is defined among the enumerated type:
 ```php
 <?php
 DayOfWeek::assert(DayOfWeek::monday); // DayOfWeek::monday
-DayOfWeek::assert('foo'); // (throws \UnexpectedValueException)
+DayOfWeek::assert(123); // (throws \UnexpectedValueException)
 
 DayOfWeek::coerce(DayOfWeek::monday); // DayOfWeek::monday
-DayOfWeek::coerce('bar'); // null
-DayOfWeek::coerce('baz', DayOfWeek::tuesday); // DayOfWeek::tuesday
+DayOfWeek::coerce(123); // null
+DayOfWeek::coerce(123, DayOfWeek::tuesday); // DayOfWeek::tuesday
 ```
 
 Get the zero-based position of a value in the enumerated type declaration:
@@ -55,7 +55,7 @@ Get the zero-based position of a value in the enumerated type declaration:
 ```php
 <?php
 DayOfWeek::getIndex(DayOfWeek::wednesday); // 3
-DayOfWeek::getIndex('foo'); // -1
+DayOfWeek::getIndex(123); // -1
 ```
 
 Get the name associated to an enumerated value:
@@ -63,7 +63,7 @@ Get the name associated to an enumerated value:
 ```php
 <?php
 DayOfWeek::getName(DayOfWeek::thursday); // "thursday"
-DayOfWeek::getName('foo'); // "" (empty)
+DayOfWeek::getName(123); // "" (empty)
 ```
 
 Get information about the enumerated type:
