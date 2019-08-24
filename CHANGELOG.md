@@ -19,7 +19,7 @@
 - Dropped the dependency on [PHPUnit-Expect](https://dev.belin.io/phpunit-expect).
 
 # Version [7.0.0](https://github.com/cedx/enum.php/compare/v6.1.0...v7.0.0)
-- Breaking change: raised the required [PHP](https://secure.php.net) version.
+- Breaking change: raised the required [PHP](https://www.php.net) version.
 - Breaking change: all methods of the `EnumTrait` trait are now final.
 - Updated the package dependencies.
 
@@ -28,7 +28,7 @@
 - Updated the package dependencies.
 
 ## Version [6.0.0](https://github.com/cedx/enum.php/compare/v5.0.0...v6.0.0)
-- Breaking change: raised the required [PHP](https://secure.php.net) version.
+- Breaking change: raised the required [PHP](https://www.php.net) version.
 - Breaking change: using PHP 7.1 features, like class constant visibility and void functions.
 - Fixed the [issue #1](https://github.com/cedx/enum.php/issues/1): `protected` and `private` constants are now ignored.
 

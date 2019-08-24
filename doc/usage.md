@@ -27,7 +27,7 @@ final class DayOfWeek {
 This trait adds a private constructor to the enumerated type: it prohibits its instantiation.
 
 Thus, the obtained enumeration can only contain static members.
-You should only use [scalar constants](https://secure.php.net/manual/en/function.is-scalar.php), and possibly static methods.
+You should only use [scalar constants](https://www.php.net/manual/en/function.is-scalar.php), and possibly static methods.
 
 ## Work with the enumeration
 Check whether a value is defined among the enumerated type:
