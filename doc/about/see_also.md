@@ -6,7 +6,7 @@
 - [Submit an issue](https://github.com/cedx/enum.php/issues)
 
 ## Testing
-- [Continuous integration](https://travis-ci.com/cedx/enum.php)
+- [Continuous integration](https://github.com/cedx/enum.php/actions)
 - [Code coverage](https://coveralls.io/github/cedx/enum.php/)
 
 ## Other implementations
