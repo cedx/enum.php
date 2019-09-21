@@ -43,7 +43,7 @@ trait EnumTrait {
    */
   final static function getEntries(): array {
     static $entries;
-    if (!isset($entries)) {
+    if (!$entries) {
       $entries = [];
       foreach ((new \ReflectionClass(static::class))->getConstants() as $name => $value) {
         $reflection = new \ReflectionClassConstant(static::class, $name);
