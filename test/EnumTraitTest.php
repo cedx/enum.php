@@ -27,10 +27,10 @@ final class SampleEnum {
   private const privateValue = null;
 }
 
-/** Tests the features of the `Enum\EnumTrait` trait. */
+/** @testdox Enum\EnumTrait */
 class EnumTraitTest extends TestCase {
 
-  /** @test EnumTrait->__construct() */
+  /** @testdox constructor */
   function testConstructor(): void {
     it('should create types that are not instantiable', function() {
       if ($constructor = (new \ReflectionClass(SampleEnum::class))->getConstructor()) {
@@ -40,7 +40,7 @@ class EnumTraitTest extends TestCase {
     });
   }
 
-  /** @test EnumTrait::assert() */
+  /** @testdox ::assert() */
   function testAssert(): void {
     it('should return the specified value if it is a known one', function() {
       expect(SampleEnum::assert(false))->to->equal(SampleEnum::zero);
@@ -54,7 +54,7 @@ class EnumTraitTest extends TestCase {
     });
   }
 
-  /** @test EnumTrait::coerce() */
+  /** @testdox ::coerce() */
   function testCoerce(): void {
     it('should return the specified value if it is a known one', function() {
       expect(SampleEnum::coerce(false))->to->equal(SampleEnum::zero);
@@ -71,7 +71,7 @@ class EnumTraitTest extends TestCase {
     });
   }
 
-  /** @test EnumTrait::isDefined() */
+  /** @testdox ::isDefined() */
   function testIsDefined(): void {
     it('should return `false` for unknown values', function() {
       expect(SampleEnum::isDefined(''))->to->be->false;
@@ -88,14 +88,14 @@ class EnumTraitTest extends TestCase {
     });
   }
 
-  /** @test EnumTrait::getEntries() */
+  /** @testdox ::getEntries() */
   function testGetEntries(): void {
     it('should return the pairs of names and values of the enumerated constants', function() {
       expect(SampleEnum::getEntries())->to->equal(['zero' => false, 'one' => 1, 'two' => 'TWO', 'three' => 3.0]);
     });
   }
 
-  /** @test EnumTrait::getIndex() */
+  /** @testdox ::getIndex() */
   function testGetIndex(): void {
     it('should return `-1` for unknown values', function() {
       expect(SampleEnum::getIndex(0))->to->equal(-1);
@@ -112,7 +112,7 @@ class EnumTraitTest extends TestCase {
     });
   }
 
-  /** @test EnumTrait::getName() */
+  /** @testdox ::getName() */
   function testGetName(): void {
     it('should return an empty string for unknown values', function() {
       expect(SampleEnum::getName(0))->to->be->empty;
@@ -129,14 +129,14 @@ class EnumTraitTest extends TestCase {
     });
   }
 
-  /** @test EnumTrait::getNames() */
+  /** @testdox ::getNames() */
   function testGetNames(): void {
     it('should return the names of the enumerated constants', function() {
       expect(SampleEnum::getNames())->to->equal(['zero', 'one', 'two', 'three']);
     });
   }
 
-  /** @test EnumTrait::getValues() */
+  /** @testdox ::getValues() */
   function testGetValues(): void {
     it('should return the values of the enumerated constants', function() {
       expect(SampleEnum::getValues())->to->equal([false, 1, 'TWO', 3.0]);
