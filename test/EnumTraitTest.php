@@ -50,7 +50,7 @@ class EnumTraitTest extends TestCase {
     });
 
     it('should throw an exception if it is an unknown value', function() {
-      expect(function() { SampleEnum::assert(''); })->to->throw(\UnexpectedValueException::class);
+      expect(fn() => SampleEnum::assert(''))->to->throw(\UnexpectedValueException::class);
     });
   }
 
