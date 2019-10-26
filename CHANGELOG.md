@@ -1,5 +1,9 @@
 # Changelog
 
+# Version [8.0.0](https://github.com/cedx/enum.php/compare/v7.5.0...v8.0.0)
+- Breaking change: raised the required [PHP](https://www.php.net) version.
+- Breaking change: using PHP 7.4 features, like arrow functions.
+
 # Version [7.5.0](https://github.com/cedx/enum.php/compare/v7.4.0...v7.5.0)
 - Modified the package layout.
 - Updated the package dependencies.
