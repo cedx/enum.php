@@ -27,10 +27,10 @@
     "ext-reflection": "*"
   },
   "require-dev": {
-    "cedx/coveralls": "^12.0.0",
+    "cedx/coveralls": "^11.2.0",
     "cedx/phpunit-expect": "^0.9.0",
     "consolidation/robo": "^2.0.0",
-    "phpstan/phpstan": "^0.12.0"
+    "phpstan/phpstan": "^0.12.1"
   },
   "scripts": {
     "coverage": "robo coverage",
