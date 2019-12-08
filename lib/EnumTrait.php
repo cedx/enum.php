@@ -45,8 +45,8 @@ trait EnumTrait {
     static $entries;
     $entries ??= array_filter(
       (new \ReflectionClass(static::class))->getConstants(),
-      fn($value, $name) => (new \ReflectionClassConstant(static::class, $name))->isPublic(),
-      ARRAY_FILTER_USE_BOTH
+      fn($name) => (new \ReflectionClassConstant(static::class, $name))->isPublic(),
+      ARRAY_FILTER_USE_KEY
     );
 
     return $entries;
