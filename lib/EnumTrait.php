@@ -39,7 +39,7 @@ trait EnumTrait {
 
   /**
    * Gets an associative array of the pairs of names and values of the constants in this enumeration.
-   * @return array An associative array that contains the pairs of names and values of the constants in this enumeration.
+   * @return array<string, mixed> An associative array that contains the pairs of names and values of the constants in this enumeration.
    */
   final static function getEntries(): array {
     static $entries;
@@ -84,7 +84,7 @@ trait EnumTrait {
 
   /**
    * Gets an array of the values of the constants in this enumeration.
-   * @return array An array that contains the values of the constants in this enumeration.
+   * @return mixed[] An array that contains the values of the constants in this enumeration.
    */
   final static function getValues(): array {
     return array_values(static::getEntries());
