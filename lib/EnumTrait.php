@@ -43,13 +43,11 @@ trait EnumTrait {
    */
   final static function getEntries(): array {
     static $entries;
-    if (!$entries) {
-      $entries = [];
-      foreach ((new \ReflectionClass(static::class))->getConstants() as $name => $value) {
-        $reflection = new \ReflectionClassConstant(static::class, $name);
-        if ($reflection->isPublic()) $entries[$name] = $reflection->getValue();
-      }
-    }
+    $entries ??= array_filter(
+      (new \ReflectionClass(static::class))->getConstants(),
+      fn($value, $name) => (new \ReflectionClassConstant(static::class, $name))->isPublic(),
+      ARRAY_FILTER_USE_BOTH
+    );
 
     return $entries;
   }
