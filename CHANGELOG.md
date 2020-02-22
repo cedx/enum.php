@@ -71,7 +71,7 @@
 - Updated the package dependencies.
 
 ## Version [1.1.0](https://github.com/cedx/enum.php/compare/v1.0.0...v1.1.0)
-- Added a `$strict` parameter to `isDefined` and `getName` methods.
+- Added a `$strict` parameter to `isDefined()` and `getName()` methods.
 
 ## Version 1.0.0
 - Initial release.
