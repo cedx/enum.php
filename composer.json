@@ -8,7 +8,7 @@
     {"email": "cedric@belin.io", "homepage": "https://belin.io", "name": "Cédric Belin"}
   ],
   "autoload": {
-    "psr-4": {"Enum\\": "lib/"}
+    "psr-4": {"Enum\\": "src/"}
   },
   "autoload-dev": {
     "psr-4": {"Enum\\": "test/"}
