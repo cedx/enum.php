@@ -1,5 +1,5 @@
 site_name: Enums for PHP
-site_description: Prevent comment spam using the Enums service, in PHP.
+site_description: A simple implementation of enumerated types, for PHP.
 site_author: Cédric Belin - cedric@belin.io
 site_url: https://docs.belin.io/enum.php
 
