@@ -4,13 +4,13 @@
 Yet another implementation of enumerated types for [PHP](https://www.php.net).
 
 ## Documentation
-- [User guide](https://dev.belin.io/enum.php)
-- [API reference](https://dev.belin.io/enum.php/api)
+- [User guide](https://docs.belin.io/enum.php)
+- [API reference](https://api.belin.io/enum.php)
 
 ## Development
-- [Git repository](https://github.com/cedx/enum.php)
+- [Git repository](https://git.belin.io/cedx/enum.php)
 - [Packagist package](https://packagist.org/packages/cedx/enum)
-- [Submit an issue](https://github.com/cedx/enum.php/issues)
+- [Submit an issue](https://git.belin.io/cedx/enum.php/issues)
 
 ## License
-[Enums for PHP](https://dev.belin.io/enum.php) is distributed under the MIT License.
+[Enums for PHP](https://docs.belin.io/enum.php) is distributed under the MIT License.
