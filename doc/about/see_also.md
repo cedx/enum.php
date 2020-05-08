@@ -8,6 +8,3 @@
 ## Testing
 - [Continuous integration](https://github.com/cedx/enum.php/actions)
 - [Code coverage](https://coveralls.io/github/cedx/enum.php/)
-
-## Other implementations
-- JavaScript: [Enums for JS](https://docs.belin.io/enum.js)
