@@ -1,5 +1,5 @@
 # Enums <small>for PHP</small>
-![Runtime](https://img.shields.io/packagist/php-v/cedx/enum.svg) ![Release](https://img.shields.io/packagist/v/cedx/enum.svg) ![License](https://img.shields.io/packagist/l/cedx/enum.svg) ![Downloads](https://img.shields.io/packagist/dt/cedx/enum.svg) ![Coverage](https://coveralls.io/repos/github/cedx/enum.php/badge.svg) ![Build](https://github.com/cedx/enum.php/workflows/build/badge.svg)
+![Runtime](https://badgen.net/packagist/php/cedx/enum) ![Release](https://badgen.net/packagist/v/cedx/enum) ![License](https://badgen.net/packagist/license/cedx/enum) ![Downloads](https://badgen.net/packagist/dt/cedx/enum) ![Coverage](https://badgen.net/coveralls/c/github/cedx/enum.php) ![Build](https://badgen.net/github/checks/cedx/enum.php)
 
 ## Yet another implementation of enumerated types
 This implementation, based on [traits](https://www.php.net/manual/en/language.oop5.traits.php), gives a set of static methods to ease working with the `public` constants of a class representing an enumerated type.
