@@ -9,7 +9,7 @@ Unlike other [PHP](https://www.php.net) implementations, like the [SplEnum](http
 ## Quick start
 Install the latest version of **Enums for PHP** with [Composer](https://getcomposer.org):
 
-```shell
+``` shell
 composer require cedx/enum
 ```
 
