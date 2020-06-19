@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-use Enum\{EnumTrait};
+use Enum\EnumTrait;
 
 /** Specifies the day of the week. */
 final class DayOfWeek {

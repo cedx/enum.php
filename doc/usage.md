@@ -10,7 +10,7 @@ Just use the `Enum\EnumTrait` trait on a class:
 
 ``` php
 <?php
-use Enum\{EnumTrait};
+use Enum\EnumTrait;
 
 /** Specifies the day of the week. */
 final class DayOfWeek {

@@ -2,7 +2,7 @@
 namespace Enum;
 
 use function PHPUnit\Framework\{assertThat, equalTo, isEmpty, isFalse, isNull, isTrue};
-use PHPUnit\Framework\{TestCase};
+use PHPUnit\Framework\TestCase;
 
 /** A sample enumeration. */
 final class SampleEnum {
