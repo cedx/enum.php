@@ -1,15 +1,9 @@
----
-path: src/branch/main
-source: src/EnumTrait.php
----
-
 # Usage
 
 ## Create the enumeration
 Just use the `Enum\EnumTrait` trait on a class:
 
-``` php
-<?php
+```php
 use Enum\EnumTrait;
 
 /** Specifies the day of the week. */
@@ -34,16 +28,14 @@ You should only use [scalar constants](https://www.php.net/manual/en/function.is
 ## Work with the enumeration
 Check whether a value is defined among the enumerated type:
 
-``` php
-<?php
+```php
 DayOfWeek::isDefined(DayOfWeek::sunday); // true
 DayOfWeek::isDefined(123); // false
 ```
 
 Ensure that a value is defined among the enumerated type:
 
-``` php
-<?php
+```php
 DayOfWeek::assert(DayOfWeek::monday); // DayOfWeek::monday
 DayOfWeek::assert(123); // (throws \UnexpectedValueException)
 
@@ -54,24 +46,21 @@ DayOfWeek::coerce(123, DayOfWeek::tuesday); // DayOfWeek::tuesday
 
 Get the zero-based position of a value in the enumerated type declaration:
 
-``` php
-<?php
+```php
 DayOfWeek::getIndex(DayOfWeek::wednesday); // 3
 DayOfWeek::getIndex(123); // -1
 ```
 
 Get the name associated to an enumerated value:
 
-``` php
-<?php
+```php
 DayOfWeek::getName(DayOfWeek::thursday); // "thursday"
 DayOfWeek::getName(123); // "" (empty)
 ```
 
 Get information about the enumerated type:
 
-``` php
-<?php
+```php
 DayOfWeek::getEntries();
 // ["sunday" => 0, "monday" => 1, "tuesday" => 2, "wednesday" => 3, "thursday" => 4, "friday" => 5, "saturday" => 6]
 
