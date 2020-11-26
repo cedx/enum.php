@@ -1,7 +1,7 @@
 # Enums for PHP
 ![Runtime](https://badgen.net/packagist/php/cedx/enum) ![Release](https://badgen.net/packagist/v/cedx/enum) ![License](https://badgen.net/packagist/license/cedx/enum) ![Downloads](https://badgen.net/packagist/dt/cedx/enum) ![Coverage](https://badgen.net/coveralls/c/github/cedx/enum.php) ![Build](https://badgen.net/github/checks/cedx/enum.php/main)
 
-Yet another implementation of enumerated types for [PHP](https://www.php.net).
+> Yet another implementation of enumerated types for [PHP](https://www.php.net).
 
 ## Documentation
 - [User guide](https://docs.belin.io/enum.php)
