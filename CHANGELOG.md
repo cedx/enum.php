@@ -47,7 +47,7 @@
 ## Version [6.0.0](https://git.belin.io/cedx/enum.php/compare/v5.0.0...v6.0.0)
 - Breaking change: raised the required [PHP](https://www.php.net) version.
 - Breaking change: using PHP 7.1 features, like class constant visibility and void functions.
-- Fixed the [issue #1](https://git.belin.io/cedx/enum.php/issues/1): `protected` and `private` constants are now ignored.
+- Fixed the [issue #1](https://github.com/cedx/enum.php/issues/1): `protected` and `private` constants are now ignored.
 
 ## Version [5.0.0](https://git.belin.io/cedx/enum.php/compare/v4.0.0...v5.0.0)
 - Breaking change: dropped the `$strict` parameter of the `isDefined()` and `getName()` methods, comparisons are now always strict.
