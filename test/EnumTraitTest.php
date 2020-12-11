@@ -8,22 +8,22 @@ use PHPUnit\Framework\TestCase;
 final class SampleEnum {
 	use EnumTrait;
 
-	/** @var bool The first enumerated value. */
+	/** The first enumerated value. */
 	const zero = false;
 
-	/** @var int The second enumerated value. */
+	/** The second enumerated value. */
 	const one = 1;
 
-	/** @var string The third enumerated value. */
+	/** The third enumerated value. */
 	const two = "TWO";
 
-	/** @var float The fourth enumerated value. */
+	/** The fourth enumerated value. */
 	const three = 3.0;
 
-	/** @var mixed A protected enumerated value that should be ignored. */
+	/** A protected enumerated value that should be ignored. */
 	protected const protectedValue = null;
 
-	/** @var mixed A private enumerated value that should be ignored. */
+	/** A private enumerated value that should be ignored. */
 	private const privateValue = null;
 }
 

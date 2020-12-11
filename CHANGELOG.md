@@ -1,5 +1,11 @@
 # Changelog
 
+# Version [9.0.0](https://git.belin.io/cedx/enum.php/compare/v8.2.0...v9.0.0)
+- Breaking change: raised the required [PHP](https://www.php.net) version.
+- Breaking change: using PHP 8.0 features, like the `mixed` type and the `ReflectionClassConstant::IS_PUBLIC` constant.
+- Ported the documentation to [docsify](https://docsify.js.org).
+- Replaced the build system based on [Robo](https://robo.li) by [PowerShell](https://docs.microsoft.com/en-us/powershell) scripts.
+
 # Version [8.2.0](https://git.belin.io/cedx/enum.php/compare/v8.1.0...v8.2.0)
 - Updated the documentation.
 - Updated the package dependencies.
