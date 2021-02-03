@@ -32,8 +32,8 @@
 	},
 	"require-dev": {
 		"cedx/coveralls": "^14.0.0",
-		"phpstan/phpstan": "^0.12.70",
-		"phpunit/phpunit": "^9.5.1"
+		"phpstan/phpstan": "^0.12.71",
+		"phpunit/phpunit": "^9.5.2"
 	},
 	"scripts": {
 		"clean": "pwsh tool/clean.ps1",
