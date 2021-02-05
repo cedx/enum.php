@@ -1,9 +1,9 @@
 # See also
 
 ## Development
-- [API reference](https://api.belin.io/enum.php)
+- [API reference](https://cedx.github.io/enum.php/api)
 - [Packagist package](https://packagist.org/packages/cedx/enum)
-- [Submit an issue](https://git.belin.io/cedx/enum.php/issues)
+- [Submit an issue](https://github.com/cedx/enum.php/issues)
 
 ## Testing
 - [Continuous integration](https://github.com/cedx/enum.php/actions)

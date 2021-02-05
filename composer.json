@@ -1,6 +1,6 @@
 {
 	"description": "A simple implementation of enumerated types.",
-	"homepage": "https://docs.belin.io/enum.php",
+	"homepage": "https://cedx.github.io/enum.php",
 	"license": "MIT",
 	"name": "cedx/enum",
 	"type": "library",
@@ -45,7 +45,7 @@
 		"version": "pwsh tool/version.ps1"
 	},
 	"support": {
-		"docs": "https://api.belin.io/enum.php",
-		"issues": "https://git.belin.io/cedx/enum.php/issues"
+		"docs": "https://cedx.github.io/enum.php/api",
+		"issues": "https://github.com/cedx/enum.php/issues"
 	}
 }
