@@ -31,3 +31,5 @@ Now in your [PHP](https://www.php.net) code, you can use:
 ```php
 use Enum\EnumTrait;
 ```
+
+See the [usage information](usage/api.md).
